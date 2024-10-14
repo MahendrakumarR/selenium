@@ -65,19 +65,33 @@ URL : https://www.facebook.com/
 NOTE: Enter Email or Phone and Password.
 
 """
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
+
+# driver = webdriver.Firefox()
+
+# driver.get("https://www.facebook.com/")
+
+# username = driver.find_element(By.ID,"email")
+# username.send_keys("mahendran@gmail.com")
+
+# password = driver.find_element(By.ID,"pass")
+# password.send_keys(123456)
+
+# btn = driver.find_element(By.NAME,"login")
+# btn.click()
+
+"""
+QUESTION 2
+----------
+URL : https://www.redbus.in/ 
+
+NOTE: Enter from and to textbox.
+
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 driver = webdriver.Firefox()
 
-driver.get("https://www.facebook.com/")
-
-username = driver.find_element(By.ID,"email")
-username.send_keys("mahendran@gmail.com")
-
-password = driver.find_element(By.ID,"pass")
-password.send_keys(123456)
-
-btn = driver.find_element(By.NAME,"login")
-btn.click()
-
+driver.get("https://www.redbus.in/ ")
