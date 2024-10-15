@@ -89,9 +89,55 @@ URL : https://www.redbus.in/
 NOTE: Enter from and to textbox.
 
 """
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
+# from selenium.webdriver.common.keys import Keys
+
+# driver = webdriver.Firefox()
+
+# driver.get("https://www.redbus.in/ ")
+
+# from_= driver.find_element(By.ID,"src")
+# from_.send_keys("Erode")
+# from_.send_keys(Keys.ENTER)
+
+# to_= driver.find_element(By.ID,"dest")
+# to_.send_keys("Chennai")
+
+"""
+QUESTION 3
+----------
+URL : https://www.google.com/
+
+NOTE: Enter GreensTechnology. 
+
+"""
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
+# from selenium.webdriver.common.keys import Keys
+
+# driver = webdriver.Firefox()
+
+# driver.get("https://www.google.com/")
+
+# search = driver.find_element(By.ID,"APjFqb")
+# search.send_keys("Greens Technology")
+# search.send_keys(Keys.ENTER) 
+
+"""
+QUESTION 4
+----------
+URL : https://infinity.icicibank.com/corp/Login.jsp
+
+NOTE: Enter username and password. 
+
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 driver = webdriver.Firefox()
 
-driver.get("https://www.redbus.in/ ")
+driver.get("https://infinity.icicibank.com/corp/Login.jsp")
+
+user = driver.find_element(By.ID,"")
