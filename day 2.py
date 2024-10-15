@@ -179,17 +179,17 @@ URL : https://www.swiggy.com/
 NOTE: Enter the location.
 
 """
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
 
-driver = webdriver.Firefox()
+# driver = webdriver.Firefox()
 
-driver.get("https://www.swiggy.com/")
+# driver.get("https://www.swiggy.com/")
 
-user_id = driver.find_element(By.NAME,"")
+# user_id = driver.find_element(By.NAME,"")
 
-loc = driver.find_element(By.ID,"location")
-loc.send_keys("Erode")
+# loc = driver.find_element(By.ID,"location")
+# loc.send_keys("Erode")
 
 
 """
@@ -200,15 +200,43 @@ URL :https://www.snapdeal.com/login
 NOTE: Enter mobile number/email.
 
 """
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
+
+# driver = webdriver.Firefox()
+
+# driver.get("https://www.snapdeal.com/login")
+
+# d = driver.find_element(By.ID,"userName")
+# d.send_keys(9876543210)
+
+# btn = driver.find_element(By.ID,"checkUser")
+# btn.click()
 
 """
 QUESTION 8
 -----------
-URL : https://www.instagram.com/accounts/login/?hl=en) login page 
+URL : https://www.instagram.com/accounts/login/?hl=en login page 
 
 NOTE: Enter username and password.
 
 """
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Firefox()
+
+driver.get("https://www.instagram.com/accounts/login/?hl=en")
+
+
+u = driver.find_element(By.ID,"username")
+u.send_keys("Mahendran")
+
+p = driver.find_element(By.ID,"password")
+p.send_keys("Mahe")
+
+
+
 
 """
 QUESTION 9
