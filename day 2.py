@@ -132,12 +132,98 @@ URL : https://infinity.icicibank.com/corp/Login.jsp
 NOTE: Enter username and password. 
 
 """
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
+# from selenium.webdriver.common.keys import Keys
+
+# driver = webdriver.Firefox()
+
+# driver.get("https://infinity.icicibank.com/corp/Login.jsp")
+
+# user = driver.find_element(By.NAME,"DUMMY1")
+# user.send_keys("Mahendran")
+
+
+# pass_ = driver.find_element(By.NAME,"AuthenticationFG.ACCESS_CODE")
+# pass_.send_keys(12345)
+
+"""
+QUESTION 5
+----------
+URL : https://netbanking.hdfcbank.com/ 
+
+NOTE: Enter customer id .
+
+"""
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
+# import time
+
+# driver = webdriver.Chrome()
+
+# driver.get("https://netbanking.hdfcbank.com/")
+
+# time.sleep(8)
+
+# user_id = driver.find_element(By.NAME,"fldLoginUserId")
+# user_id.send_keys(9087654)
+
+
+# time.sleep(2)
+
+"""
+QUESTION 6
+----------
+URL : https://www.swiggy.com/
+
+NOTE: Enter the location.
+
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 
 driver = webdriver.Firefox()
 
-driver.get("https://infinity.icicibank.com/corp/Login.jsp")
+driver.get("https://www.swiggy.com/")
 
-user = driver.find_element(By.ID,"")
+user_id = driver.find_element(By.NAME,"")
+
+loc = driver.find_element(By.ID,"location")
+loc.send_keys("Erode")
+
+
+"""
+QUESTION 7
+----------
+URL :https://www.snapdeal.com/login
+
+NOTE: Enter mobile number/email.
+
+"""
+
+"""
+QUESTION 8
+-----------
+URL : https://www.instagram.com/accounts/login/?hl=en) login page 
+
+NOTE: Enter username and password.
+
+"""
+
+"""
+QUESTION 9
+-----------
+URL : http://demo.automationtesting.in/Register.html
+
+NOTE: Just enter the values for the textbox only.
+
+"""
+
+"""
+QUESTION 10
+-----------
+URL : http://adactinhotelapp.com/
+
+NOTE: Enter Email or Phone and Password.
+
+"""
