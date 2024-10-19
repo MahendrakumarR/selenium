@@ -246,22 +246,22 @@ URL : http://demo.automationtesting.in/Register.html
 NOTE: Just enter the values for the textbox only.
 
 """
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
-# driver = webdriver.Firefox()
+driver = webdriver.Firefox()
 
-# driver.get("http://demo.automationtesting.in/Register.html")
+driver.get("http://demo.automationtesting.in/Register.html")
 
-# f_name = driver.find_element(By.XPATH,"//input[@placeholder='First Name']")
-# f_name.send_keys("Mahendra")
+f_name = driver.find_element(By.XPATH,"//input[@placeholder='First Name']")
+f_name.send_keys("Mahendra")
 
-# driver.find_element(By.XPATH,"//input[@placeholder='Last Name']").send_keys("Kumar")
-# driver.find_element(By.XPATH,"//textarea[@ng-model='Adress']").send_keys("Erode, Tamilnadu")
-# driver.find_element(By.XPATH,"//input[@type='email']").send_keys("abcd@gmail.com")
-# driver.find_element(By.XPATH,"//input[@type='tel']").send_keys("9876543210")
-# driver.find_element(By.XPATH,"//input[@ng-mode='Password']").send_keys("9876")
-# driver.find_element(By.XPATH,"//input[@ng-model='CPassword']").send_keys("98765")
+driver.find_element(By.XPATH,"//input[@placeholder='Last Name']").send_keys("Kumar")
+driver.find_element(By.XPATH,"//textarea[@ng-model='Adress']").send_keys("Erode, Tamilnadu")
+driver.find_element(By.XPATH,"//input[@type='email']").send_keys("abcd@gmail.com")
+driver.find_element(By.XPATH,"//input[@type='tel']").send_keys("9876543210")
+driver.find_element(By.XPATH,"//input[@type='password']").send_keys(9876)
+driver.find_element(By.XPATH,"//input[@type='secondassword']").send_keys(98765)
 
 
 """
