@@ -221,19 +221,19 @@ URL : https://www.instagram.com/accounts/login/?hl=en login page
 NOTE: Enter username and password.
 
 """
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
 
-driver = webdriver.Firefox()
+# driver = webdriver.Firefox()
 
-driver.get("https://www.instagram.com/accounts/login/?hl=en")
+# driver.get("https://www.instagram.com/accounts/login/?hl=en")
 
 
-u = driver.find_element(By.ID,"username")
-u.send_keys("Mahendran")
+# u = driver.find_element(By.ID,"username")
+# u.send_keys("Mahendran")
 
-p = driver.find_element(By.ID,"password")
-p.send_keys("Mahe")
+# p = driver.find_element(By.ID,"password")
+# p.send_keys("Mahe")
 
 
 
@@ -246,6 +246,23 @@ URL : http://demo.automationtesting.in/Register.html
 NOTE: Just enter the values for the textbox only.
 
 """
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
+
+# driver = webdriver.Firefox()
+
+# driver.get("http://demo.automationtesting.in/Register.html")
+
+# f_name = driver.find_element(By.XPATH,"//input[@placeholder='First Name']")
+# f_name.send_keys("Mahendra")
+
+# driver.find_element(By.XPATH,"//input[@placeholder='Last Name']").send_keys("Kumar")
+# driver.find_element(By.XPATH,"//textarea[@ng-model='Adress']").send_keys("Erode, Tamilnadu")
+# driver.find_element(By.XPATH,"//input[@type='email']").send_keys("abcd@gmail.com")
+# driver.find_element(By.XPATH,"//input[@type='tel']").send_keys("9876543210")
+# driver.find_element(By.XPATH,"//input[@ng-mode='Password']").send_keys("9876")
+# driver.find_element(By.XPATH,"//input[@ng-model='CPassword']").send_keys("98765")
+
 
 """
 QUESTION 10
@@ -255,3 +272,6 @@ URL : http://adactinhotelapp.com/
 NOTE: Enter Email or Phone and Password.
 
 """
+
+
+
