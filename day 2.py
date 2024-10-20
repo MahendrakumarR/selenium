@@ -223,16 +223,18 @@ NOTE: Enter username and password.
 """
 # from selenium import webdriver
 # from selenium.webdriver.common.by import By
+# import time
 
 # driver = webdriver.Firefox()
 
 # driver.get("https://www.instagram.com/accounts/login/?hl=en")
 
+# time.sleep(10)
 
-# u = driver.find_element(By.ID,"username")
+# u = driver.find_element(By.XPATH,"//input[@name='username']")
 # u.send_keys("Mahendran")
 
-# p = driver.find_element(By.ID,"password")
+# p = driver.find_element(By.XPATH,"//input[@name='password']")
 # p.send_keys("Mahe")
 
 
