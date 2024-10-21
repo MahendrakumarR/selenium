@@ -134,7 +134,6 @@ NOTE: Enter username and password.
 """
 # from selenium import webdriver
 # from selenium.webdriver.common.by import By
-# from selenium.webdriver.common.keys import Keys
 
 # driver = webdriver.Firefox()
 
@@ -143,9 +142,12 @@ NOTE: Enter username and password.
 # user = driver.find_element(By.NAME,"DUMMY1")
 # user.send_keys("Mahendran")
 
+# driver.find_element(By.ID,"user-id-goahead").click()
 
-# pass_ = driver.find_element(By.NAME,"AuthenticationFG.ACCESS_CODE")
-# pass_.send_keys(12345)
+# driver.find_element(By.ID,"AuthenticationFG.USER_PRINCIPAL").send_keys("Mahendran")
+
+# driver.find_element(By.ID,"AuthenticationFG.ACCESS_CODE").send_keys("009876")
+
 
 """
 QUESTION 5
@@ -159,17 +161,12 @@ NOTE: Enter customer id .
 # from selenium.webdriver.common.by import By
 # import time
 
-# driver = webdriver.Chrome()
+
+# driver = webdriver.Firefox()
 
 # driver.get("https://netbanking.hdfcbank.com/")
 
-# time.sleep(8)
-
-# user_id = driver.find_element(By.NAME,"fldLoginUserId")
-# user_id.send_keys(9087654)
-
-
-# time.sleep(2)
+# time.sleep(10)
 
 """
 QUESTION 6
@@ -179,6 +176,7 @@ URL : https://www.swiggy.com/
 NOTE: Enter the location.
 
 """
+
 # from selenium import webdriver
 # from selenium.webdriver.common.by import By
 
@@ -186,11 +184,10 @@ NOTE: Enter the location.
 
 # driver.get("https://www.swiggy.com/")
 
-# user_id = driver.find_element(By.NAME,"")
-
-# loc = driver.find_element(By.ID,"location")
-# loc.send_keys("Erode")
-
+# driver.find_element(By.XPATH,"//div[@role='button']").click()
+# l = driver.find_element(By.XPATH,"//input[@name='']")
+# l.send_keys("coimbatore")
+# l.click()
 
 """
 QUESTION 7
