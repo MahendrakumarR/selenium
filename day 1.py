@@ -112,10 +112,14 @@ QUESTIONS(practical)
     3.Greens technologys- http://greenstech.in/selenium-course-content.html
 
 """
-from selenium import webdriver
+# from selenium import webdriver
 
-driver_ie = webdriver.Ie()
+# driver_ie = webdriver.Ie()
 
 # driver_ie.get("http://www.greenstechnologys.com/")
 # driver_ie.get("http://demo.automationtesting.in/Register.html")
 # driver_ie.get("http://greenstech.in/selenium-course-content.html")
+
+
+
+# ===================== End =============================== #
