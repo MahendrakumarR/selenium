@@ -67,16 +67,8 @@ driver = webdriver.Firefox()
 driver.get("https://www.amazon.com/")
 
 time.sleep(2)
-try:
-
-   start_here = driver.find_element(By.LINK_TEXT,"Start here")
-   start_here.click()
-   time.sleep(2)
-except:
-    print("Start link here not work")
 
 
 search_box = driver.find_element(By.ID,"twotabsearchtextbox")
-search_box.send_keys("iPhone")
+search_box.send_keys("iPhone").click()
 time.sleep(2)
-driver.quit()
