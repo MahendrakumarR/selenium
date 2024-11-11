@@ -73,4 +73,31 @@ time.sleep(2)
 search_box = driver.find_element(By.ID,"twotabsearchtextbox")
 search_box.send_keys("iPhone").click()
 time.sleep(2)
+
 """
+"""
+QUESTION 2
+-----------
+URL : https://www.facebook.com/
+
+NOTE: Enter email and password and click login(by using xpath locator).
+
+"""
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+driver = webdriver.Firefox()
+
+driver.get("https://www.facebook.com/")
+
+time.sleep(3)
+
+email = driver.find_element(By.XPATH,"//input[@placeholder='Email']")
+email.send_keys("mahendra@gmail.com")
+
+password = driver.find_element(By.XPATH,"//input[@placeholder='Password']")
+password.send_keys("mahendra@g")
+
+button = driver.find_element(By.XPATH,"\\input[@type = 'submit' ").click()
