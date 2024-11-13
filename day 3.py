@@ -83,6 +83,7 @@ URL : https://www.facebook.com/
 NOTE: Enter email and password and click login(by using xpath locator).
 
 """
+"""
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -94,10 +95,88 @@ driver.get("https://www.facebook.com/")
 
 time.sleep(3)
 
-email = driver.find_element(By.XPATH,"//input[@placeholder='Email']")
+email = driver.find_element(By.XPATH,"//input[@placeholder='Email address or phone number']")
 email.send_keys("mahendra@gmail.com")
 
-password = driver.find_element(By.XPATH,"//input[@placeholder='Password']")
+password = driver.find_element(By.XPATH,"//input[@type='password']")
 password.send_keys("mahendra@g")
 
-button = driver.find_element(By.XPATH,"\\input[@type = 'submit' ").click()
+time.sleep(2)
+
+button = driver.find_element(By.XPATH,"//button[@name='login']")
+button.click()
+
+"""
+
+"""
+QUESTION 3
+-----------
+URL : http://demo.automationtesting.in/Register.html
+
+NOTE: Give details and register the form.
+
+"""
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+driver = webdriver.Firefox()
+
+driver.get("http://demo.automationtesting.in/Register.html")
+
+time.sleep(3)
+
+f_name = driver.find_element(By.XPATH,"//input[@placeholder='First Name']")
+f_name.send_keys("MahendraN")
+
+l_name = driver.find_element(By.XPATH,"//input[@placeholder='Last Name']")
+l_name.send_keys("R")
+
+a_name = driver.find_element(By.XPATH,"//textarea[@ng-model='Adress']")
+a_name.send_keys("Erode")
+
+e_name = driver.find_element(By.XPATH,"//input[@type='email']")
+e_name.send_keys("ahendra@gmail.com")
+
+t_name = driver.find_element(By.XPATH,"//input[@type='tel]")
+t_name.send_keys("0987654321")
+
+g_name = driver.find_element(By.XPATH,"//input[@value='Male']")
+g_name.click()
+
+c_name = driver.find_element(By.XPATH,"//input[@value='Cricket']")
+c_name.click()
+
+m_name = driver.find_element(By.XPATH,"//input[@value='Movies']")
+m_name.click()
+
+la_name = driver.find_element(By.ID,"mssd")
+la_name.send_keys("Tamil")
+
+s_name = driver.find_element(By.ID,"Skill")
+s_name.send_keys("APIs")
+s_name.click()
+
+c_name = driver.find_element(By.ID,"countries")
+c_name.send_keys("india")
+c_name.click()
+
+y_name = driver.find_element(By.XPATH,"//input[@placeholder='Year']")
+y_name.send_keys("2000")
+
+m_name = driver.find_element(By.XPATH,"//input[@placeholder='Month']")
+m_name.send_keys("May")
+
+d_name = driver.find_element(By.XPATH,"//input[@placeholder='Day']")
+d_name.send_keys("10")
+
+p_name = driver.find_element(By.ID,"firstpassword")
+p_name.send_keys("MahendraN")
+
+cp_name = driver.find_element(By.ID,"secondpassword")
+cp_name.send_keys("MahendraN")
+
+btn = driver.find_element(By.ID,"submitbtn")
+btn.click()
+
