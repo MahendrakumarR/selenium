@@ -139,7 +139,7 @@ a_name.send_keys("Erode")
 e_name = driver.find_element(By.XPATH,"//input[@type='email']")
 e_name.send_keys("ahendra@gmail.com")
 
-t_name = driver.find_element(By.XPATH,"//input[@type='tel]")
+t_name = driver.find_element(By.XPATH,"//input[@type='tel']")
 t_name.send_keys("0987654321")
 
 g_name = driver.find_element(By.XPATH,"//input[@value='Male']")
@@ -151,7 +151,7 @@ c_name.click()
 m_name = driver.find_element(By.XPATH,"//input[@value='Movies']")
 m_name.click()
 
-la_name = driver.find_element(By.ID,"mssd")
+la_name = driver.find_element(By.ID,"msdd")
 la_name.send_keys("Tamil")
 
 s_name = driver.find_element(By.ID,"Skill")
@@ -176,6 +176,8 @@ p_name.send_keys("MahendraN")
 
 cp_name = driver.find_element(By.ID,"secondpassword")
 cp_name.send_keys("MahendraN")
+
+time.sleep(3)
 
 btn = driver.find_element(By.ID,"submitbtn")
 btn.click()
