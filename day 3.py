@@ -163,7 +163,7 @@ c_name.send_keys("india")
 c_name.click()
 
 y_name = driver.find_element(By.XPATH,"//input[@placeholder='Year']")
-y_name.send_keys("2000")
+y_name.send_keys("2000") 
 
 m_name = driver.find_element(By.XPATH,"//input[@placeholder='Month']")
 m_name.send_keys("May")
