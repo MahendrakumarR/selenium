@@ -119,6 +119,7 @@ NOTE: Give details and register the form.
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 import time
 
 driver = webdriver.Firefox()
@@ -154,22 +155,22 @@ m_name.click()
 la_name = driver.find_element(By.ID,"msdd")
 la_name.send_keys("Tamil")
 
-s_name = driver.find_element(By.ID,"Skill")
-s_name.send_keys("APIs")
-s_name.click()
+s_name = Select(driver.find_element(By.ID,"Skill"))
+s_name.select_by_visible_text('APIS')
 
-c_name = driver.find_element(By.ID,"countries")
-c_name.send_keys("india")
-c_name.click()
 
-y_name = driver.find_element(By.XPATH,"//input[@placeholder='Year']")
-y_name.send_keys("2000") 
+c_name = Select(driver.find_element(By.ID,"countries"))
+c_name.select_by_visible_text("india")
 
-m_name = driver.find_element(By.XPATH,"//input[@placeholder='Month']")
-m_name.send_keys("May")
 
-d_name = driver.find_element(By.XPATH,"//input[@placeholder='Day']")
-d_name.send_keys("10")
+y_name = Select(driver.find_element(By.XPATH,"//input[@placeholder='Year']"))
+y_name.select_by_value("2000") 
+
+m_name = Select(driver.find_element(By.XPATH,"//input[@placeholder='Month']"))
+m_name.select_by_visible_text("May")
+
+d_name = Select(driver.find_element(By.XPATH,"//input[@placeholder='Day']"))
+d_name.select_by_value("10")
 
 p_name = driver.find_element(By.ID,"firstpassword")
 p_name.send_keys("MahendraN")
