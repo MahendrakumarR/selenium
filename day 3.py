@@ -163,7 +163,7 @@ wait.until(EC.presence_of_all_elements_located((By.XPATH, "//ul[contains(@class,
 
 languages = driver.find_elements(By.XPATH, "//ul[contains(@class,'ui-autocomplete')]/li/a")
 for language in languages:
-    if language.text == "Tamil":
+    if language.text == "English":
         language.click()
         break 
 
