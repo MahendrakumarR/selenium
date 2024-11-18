@@ -120,6 +120,9 @@ NOTE: Give details and register the form.
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 
 driver = webdriver.Firefox()
@@ -153,7 +156,20 @@ m_name = driver.find_element(By.XPATH,"//input[@value='Movies']")
 m_name.click()
 
 la_name = driver.find_element(By.ID,"msdd")
-la_name.send_keys("Tamil")
+la_name.click()
+
+wait = WebDriverWait(driver, 10)
+wait.until(EC.presence_of_all_elements_located((By.XPATH, "//ul[contains(@class,'ui-autocomplete')]/li/a")))
+
+languages = driver.find_elements(By.XPATH, "//ul[contains(@class,'ui-autocomplete')]/li/a")
+for language in languages:
+    if language.text == "Tamil":
+        language.click()
+        break 
+
+time.sleep(2)
+
+driver.find_element(By.XPATH, "//label[text()='Languages']").click()
 
 s_name = Select(driver.find_element(By.ID,"Skill"))
 s_name.select_by_visible_text('APIS')
@@ -182,4 +198,6 @@ time.sleep(3)
 
 btn = driver.find_element(By.ID,"submitbtn")
 btn.click()
+
+time.sleep(3)
 
