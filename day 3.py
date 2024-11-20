@@ -116,7 +116,7 @@ URL : http://demo.automationtesting.in/Register.html
 NOTE: Give details and register the form.
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
@@ -201,3 +201,26 @@ btn.click()
 
 time.sleep(3)
 
+"""
+"""
+
+QUESTION 4
+-----------
+URL : http://toolsqa.com/automation-practice-form/
+
+NOTE: Give details and register the form
+
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
+
+driver = webdriver.Firefox()
+
+driver.get("http://toolsqa.com/automation-practice-form/")
+
+driver.find_element(By.XPATH, "//label[text()='Go back to Homepage']").click()
