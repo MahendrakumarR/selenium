@@ -223,8 +223,6 @@ driver = webdriver.Firefox()
 
 driver.get("http://demoqa.com/automation-practice-form/")
 
-driver.find_element(By.ID, "firstname").send_keys("MahendraN")
-
 driver.find_element(By.ID, "firstName").send_keys("MahendraN")
 
 driver.find_element(By.ID, "lastName").send_keys("R")
