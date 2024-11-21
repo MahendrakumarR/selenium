@@ -232,8 +232,9 @@ driver.find_element(By.ID, "userNumber").send_keys("987654320")
 
 driver.find_element(By.ID, "dateOfBirthInput").click()
 Select(driver.find_element(By.CLASS_NAME,"react-datepicker__year-select")).select_by_visible_text("2000")
-Select(driver.find_element(By.CLASS_NAME,"react-datepicker__month-select")).select_by_visible_text("May")
-driver.find_element(By.XPATH,"//div[text()='15']").click()
+Select(driver.find_element(By.CLASS_NAME,"react-datepicker__month-select")).select_by_visible_text("June")
+# driver.find_element(By.XPATH,"//div[text()='15']").click()
+driver.find_element(By.XPATH, "//div[contains(@class, 'react-datepicker__day') and text()='15' and not(contains(@class, 'outside-month'))]").click()
 
 driver.find_element(By.ID,"subjectsInput").send_keys("Maths")
 time.sleep(1)
@@ -248,9 +249,11 @@ upload_element.send_keys("C:/Users/Administrator/Downloads/qwert.jpeg")
 driver.find_element(By.ID,"currentAddress").send_keys("123, jhon street, chennai,chennai 001")
 
 driver.find_element(By.ID,"state").click()
+time.sleep(1)
 driver.find_element(By.XPATH,"//div[text()='NCR']").click()
 
 driver.find_element(By.ID, "city").click()
+time.sleep(1)
 driver.find_element(By.XPATH, "//div[text()='Delhi']").click()
 
 driver.find_element(By.ID,"submit").click()
