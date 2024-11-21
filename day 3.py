@@ -206,7 +206,7 @@ time.sleep(3)
 
 QUESTION 4
 -----------
-URL : http://toolsqa.com/automation-practice-form/
+URL : http://demoqa.com/automation-practice-form/
 
 NOTE: Give details and register the form
 
@@ -221,6 +221,44 @@ import time
 
 driver = webdriver.Firefox()
 
-driver.get("http://toolsqa.com/automation-practice-form/")
+driver.get("http://demoqa.com/automation-practice-form/")
 
-driver.find_element(By.XPATH, "//label[text()='Go back to Homepage']").click()
+driver.find_element(By.ID, "firstname").send_keys("MahendraN")
+
+driver.find_element(By.ID, "firstName").send_keys("MahendraN")
+
+driver.find_element(By.ID, "lastName").send_keys("R")
+
+driver.find_element(By.ID, "userEmail").send_keys("Mahendra@gmail.com")
+
+driver.find_element(By.XPATH, "//label[text()='Male']").click()
+
+driver.find_element(By.ID, "userNumber").send_keys("987654320")
+
+driver.find_element(By.ID, "dateOfBirthInput").click()
+Select(driver.find_element(By.CLASS_NAME,"react-datepicker__year-select")).select_by_visible_text("2000")
+Select(driver.find_element(By.CLASS_NAME,"react-datepicker__month-select")).select_by_visible_text("15")
+driver.find_element(By.CLASS_NAME,"//div[text()='15']").click()
+
+driver.find_element(By.ID,"subjectsInput").send_keys("Maths")
+time.sleep(1)
+driver.find_element(By.ID,"subjectsInput").send_keys('\n')
+
+driver.find_element(By.XPATH,"\\label[text()='Sports']").click()
+driver.find_element(By.XPATH,"\\label[text()='Music']").click()
+
+upload_element = driver.find_element(By.ID,"uploadPicture")
+upload_element.send_keys("C:/Users/Administrator/Downloads/qwert.jpeg")
+
+driver.find_element(By.ID,"currentAddress").send_keys("123, jhon street, chennai,chennai 001")
+
+driver.find_element(By.ID,"state").click()
+driver.find_element(By.XPATH,"//div[text()='NCR']").click()
+
+driver.find_element(By.ID, "city").click()
+driver.find_element(By.XPATH, "//div[text()='Delhi']").click()
+
+driver.find_element(By.ID,"submit").click()
+
+time.sleep(5)
+
