@@ -233,14 +233,14 @@ driver.find_element(By.ID, "userNumber").send_keys("987654320")
 driver.find_element(By.ID, "dateOfBirthInput").click()
 Select(driver.find_element(By.CLASS_NAME,"react-datepicker__year-select")).select_by_visible_text("2000")
 Select(driver.find_element(By.CLASS_NAME,"react-datepicker__month-select")).select_by_visible_text("May")
-driver.find_element(By.CLASS_NAME,"//div[text()='15']").click()
+driver.find_element(By.XPATH,"//div[text()='15']").click()
 
 driver.find_element(By.ID,"subjectsInput").send_keys("Maths")
 time.sleep(1)
 driver.find_element(By.ID,"subjectsInput").send_keys('\n')
 
-driver.find_element(By.XPATH,"\\label[text()='Sports']").click()
-driver.find_element(By.XPATH,"\\label[text()='Music']").click()
+driver.find_element(By.XPATH,"//label[text()='Sports']").click()
+driver.find_element(By.XPATH,"//label[text()='Music']").click()
 
 upload_element = driver.find_element(By.ID,"uploadPicture")
 upload_element.send_keys("C:/Users/Administrator/Downloads/qwert.jpeg")
