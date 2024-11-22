@@ -244,7 +244,7 @@ driver.find_element(By.XPATH,"//label[text()='Sports']").click()
 driver.find_element(By.XPATH,"//label[text()='Music']").click()
 
 upload_element = driver.find_element(By.ID,"uploadPicture")
-upload_element.send_keys("C:/Users/Administrator/Downloads/qwert.jpeg")
+upload_element.send_keys("C:/Users/Administrator/Downloads/qwert.JPEG")
 
 driver.find_element(By.ID,"currentAddress").send_keys("123, jhon street, chennai,chennai 001")
 
