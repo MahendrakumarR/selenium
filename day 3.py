@@ -228,7 +228,7 @@ driver.find_element(By.ID, "userEmail").send_keys("Mahendra@gmail.com")
 
 driver.find_element(By.XPATH, "//label[text()='Male']").click()
 
-driver.find_element(By.ID, "userNumber").send_keys("987654320")
+driver.find_element(By.ID, "userNumber").send_keys("987654320") 
 
 driver.find_element(By.ID, "dateOfBirthInput").click()
 Select(driver.find_element(By.CLASS_NAME,"react-datepicker__year-select")).select_by_visible_text("2000")
