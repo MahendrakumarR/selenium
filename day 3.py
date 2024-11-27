@@ -269,7 +269,7 @@ QUESTION 5
 URL : http://www.greenstechnologys.com/
 
 NOTE: Print the paragraph starts with Greens Technology
-
+"""
 """
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -286,3 +286,13 @@ for para in pragraph:
     if para.text.startswith("Greens Technology"):
         print(para.text)
         break
+"""
+"""
+QUESTION 5
+-----------
+URL : http://greenstech.in/selenium-course-content.html
+
+NOTE: Click interview question +.
+      Click cts  interview question
+
+"""
