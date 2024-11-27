@@ -201,7 +201,7 @@ btn.click()
 
 time.sleep(3)
 
-"""
+""" """===== Not Completed """
 """
 
 QUESTION 4
@@ -210,6 +210,7 @@ URL : http://demoqa.com/automation-practice-form/
 
 NOTE: Give details and register the form
 
+"""
 """
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -260,3 +261,28 @@ driver.find_element(By.ID,"submit").click()
 
 time.sleep(5)
 
+""" """===== Not Completed """
+
+"""
+QUESTION 5
+----------
+URL : http://www.greenstechnologys.com/
+
+NOTE: Print the paragraph starts with Greens Technology
+
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+import time
+
+driver = webdriver.Firefox()
+
+driver.get("http://www.greenstechnologys.com/")
+
+pragraph = driver.find_elements(By.TAG_NAME,'p')
+
+for para in pragraph:
+    if para.text.startswith("Greens Technology"):
+        print(para.text)
+        break
