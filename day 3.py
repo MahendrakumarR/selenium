@@ -296,4 +296,21 @@ NOTE: Click interview question +.
       Click cts  interview question
 
 """
+
+
+
+
+
+
+
+"""
+
+QUESTION 6
+----------
+URL : https://www.redbus.in/
+
+NOTE: Click ^[opposite of this] and  signin/signup 
+      Enter Mobilenumber and click Generate OTP
+
+"""
   
