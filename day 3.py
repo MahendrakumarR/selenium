@@ -1,7 +1,7 @@
 # Locator(xpath)
 # Radio button,checkbox, Button
 
-"""
+""" 
 What are the different types of XPath?
     
     The types of XPath are Absolute XPath and Relative XPath.
