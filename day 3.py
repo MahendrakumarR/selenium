@@ -10,7 +10,7 @@ What is XPath? Why do we use XPath?
     
     XPath is a query language for selecting nodes in XML documents; it's used in Selenium to locate elements precisely within HTML.
 
-What are the Types of XPath?
+What are the Types of XPath? 
     
     There are two main types: Absolute XPath (starting from root) and Relative XPath (starting from any node).
 
