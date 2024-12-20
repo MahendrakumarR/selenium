@@ -296,6 +296,41 @@ NOTE: Click interview question +.
       Click cts  interview question
 
 """
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Set up the WebDriver (make sure to download and specify the correct driver for your browser)
+driver = webdriver.Chrome()
+
+try:
+    # Open the URL
+    driver.get("http://greenstech.in/selenium-course-content.html")
+    
+    # Maximize the browser window
+    driver.maximize_window()
+    
+    # Wait for the page to load
+    time.sleep(2)
+    
+    # Click on "Interview Question +" to expand the section
+    interview_question_plus = driver.find_element(By.XPATH, "//h2[contains(text(),'Interview Questions')]")
+    interview_question_plus.click()
+    
+    # Wait for the options to load
+    time.sleep(2)
+    
+    # Click on "CTS Interview Question"
+    cts_question = driver.find_element(By.XPATH, "//a[contains(text(),'CTS Interview Question')]")
+    cts_question.click()
+    
+    # Wait to observe the action (optional)
+    time.sleep(5)
+    
+finally:
+    # Close the browser
+    driver.quit()
 
 
 
