@@ -296,6 +296,7 @@ NOTE: Click interview question +.
       Click cts  interview question
 
 """
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
@@ -331,6 +332,7 @@ finally:
     # Close the browser
     driver.quit()
 
+"""
 
 """
 
@@ -342,4 +344,10 @@ NOTE: Click ^[opposite of this] and  signin/signup
       Enter Mobilenumber and click Generate OTP
 
 """
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+driver = webdriver.Firefox()
+
   
