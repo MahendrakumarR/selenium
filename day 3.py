@@ -298,11 +298,10 @@ NOTE: Click interview question +.
 """
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Set up the WebDriver (make sure to download and specify the correct driver for your browser)
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 try:
     # Open the URL
@@ -331,11 +330,6 @@ try:
 finally:
     # Close the browser
     driver.quit()
-
-
-
-
-
 
 
 """
