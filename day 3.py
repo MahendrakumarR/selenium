@@ -344,10 +344,499 @@ NOTE: Click ^[opposite of this] and  signin/signup
       Enter Mobilenumber and click Generate OTP
 
 """
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 import time
 
-driver = webdriver.Firefox()
+# Initialize the WebDriver
+driver = webdriver.Chrome()  # Replace with the appropriate driver for your browser
 
-  
+# Open the Redbus website
+driver.get("https://www.redbus.in/")
+
+# Maximize the window
+driver.maximize_window()
+
+# Wait for the page to load completely
+time.sleep(5)
+
+# Click on the Sign-in/Sign-up button (^) opposite of this
+signin_button = driver.find_element(By.ID, "i-icon-profile")
+signin_button.click()
+
+time.sleep(2)  # Wait for the dropdown to appear
+
+# Select the "Sign In/Sign Up" option
+sign_in_option = driver.find_element(By.ID, "signInLink")
+sign_in_option.click()
+
+# Wait for the modal to appear
+time.sleep(5)
+
+# Switch to the iframe where the mobile number input is present
+iframe = driver.find_element(By.XPATH, "//iframe[contains(@class, 'modalIframe')]")
+driver.switch_to.frame(iframe)
+
+# Enter the mobile number
+mobile_input = driver.find_element(By.XPATH, "//input[@id='mobileNoInp']")
+mobile_input.send_keys("9876543210")  # Replace with the mobile number you want to use
+
+# Click on the Generate OTP button
+generate_otp_button = driver.find_element(By.XPATH, "//button[contains(text(), 'GENERATE OTP')]")
+generate_otp_button.click()
+
+# Wait for the OTP page to load
+time.sleep(5)
+
+# Exit the iframe to switch back to the main content
+driver.switch_to.default_content()
+
+# Close the browser
+driver.quit()
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx """
+
+"""
+QUESTION 7
+----------
+URL : https://www.cleartrip.com/trains
+
+NOTE: Enter From ,TO  and click search trains
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()  # Replace with the appropriate driver for your browser
+
+# Open the Cleartrip Trains website
+driver.get("https://www.cleartrip.com/trains")
+driver.maximize_window()
+
+# Wait for the page to load completely
+time.sleep(5)
+
+# Print the page source to verify element presence
+print(driver.page_source)  # To see if the "to_station" element exists
+
+# Enter the "From" station
+from_input = driver.find_element(By.ID, "from_station")
+from_input.clear()
+from_input.send_keys("Chennai")  # Replace with your desired 'From' location
+time.sleep(2)  # Wait for auto-suggestions to load
+from_input.send_keys(Keys.DOWN)  # Select the first suggestion
+from_input.send_keys(Keys.RETURN)
+
+# Wait for suggestions and field completion
+time.sleep(3)
+
+# Try to find the "To" station input
+try:
+    to_input = driver.find_element(By.ID, "to_station")
+    to_input.clear()
+    to_input.send_keys("Bangalore")  # Replace with your desired 'To' location
+    time.sleep(2)  # Wait for auto-suggestions to load
+    to_input.send_keys(Keys.DOWN)  # Select the first suggestion
+    to_input.send_keys(Keys.RETURN)
+except Exception as e:
+    print(f"Error: {e}")
+    print("Element 'to_station' not found.")
+
+# Wait for the fields to be fully populated before clicking the search button
+time.sleep(3)
+
+# Click on the "Search Trains" button
+try:
+    search_button = driver.find_element(By.XPATH, "//button[contains(text(), 'Search trains')]")
+    search_button.click()
+except Exception as e:
+    print(f"Error: {e}")
+    print("Search button not found.")
+
+# Wait for the results page to load
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+""" 
+QUESTION 8
+-----------
+URL :http://greenstech.in/selenium-course-content.html
+
+NOTE: Click Model Reume + and click Resume Model 1
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Firefox()  # Replace with the appropriate driver for your browser
+
+# Open the Greenstech website
+driver.get("http://greenstech.in/selenium-course-content.html")
+driver.maximize_window()
+
+# Wait for the page to load completely
+time.sleep(5)
+
+# Use WebDriverWait to wait for the "Model Resume +" button to be clickable
+try:
+    model_resume_plus_button = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Model Resume +')]"))
+    )
+    model_resume_plus_button.click()
+    print("Clicked 'Model Resume +' button.")
+except Exception as e:
+    print(f"Error: {e}")
+
+# Wait for the dropdown or modal to load
+time.sleep(2)
+
+# Click on "Resume Model 1" button with improved XPath
+try:
+    resume_model_1_button = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "//a[contains(text(), 'Resume Model 1')]"))
+    )
+    resume_model_1_button.click()
+    print("Clicked 'Resume Model 1' button.")
+except Exception as e:
+    print(f"Error: {e}")
+
+# Wait for the page to load or interact
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+
+xxxxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 9
+-----------
+URL : https://www.flipkart.com/
+
+NOTE: Click Login and Entere Username password 
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()  # Replace with the appropriate driver for your browser
+
+# Open Flipkart website
+driver.get("https://www.flipkart.com/")
+driver.maximize_window()
+
+# Wait for the page to load
+time.sleep(3)
+
+# Close the login pop-up if it appears
+try:
+    close_button = driver.find_element(By.XPATH, "//button[contains(text(), '✕')]")
+    close_button.click()
+except Exception as e:
+    print(f"Error: {e} - Pop-up may not have appeared.")
+
+# Click on the "Login" button
+login_button = driver.find_element(By.XPATH, "//a[contains(@href, '/account/login')]")
+login_button.click()
+
+# Wait for the login page to load
+time.sleep(3)
+
+# Find username and password fields
+username_field = driver.find_element(By.XPATH, "//input[@class='_2IX_2- VJZDxU']")
+password_field = driver.find_element(By.XPATH, "//input[@type='password']")
+
+# Enter username and password (replace with your credentials)
+username_field.send_keys("your_username_here")  # Replace with actual username
+password_field.send_keys("your_password_here")  # Replace with actual password
+
+# Click on the "Login" button to submit the form
+login_submit_button = driver.find_element(By.XPATH, "//button[@type='submit']")
+login_submit_button.click()
+
+# Wait for login to complete
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"""
+"""
+QUESTION 10
+-----------
+URL : https://www.amazon.in/
+
+NOTE: Click any  product and click search
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()  # Replace with the appropriate driver for your browser
+
+# Open Amazon website
+driver.get("https://www.amazon.in/")
+driver.maximize_window()
+
+# Wait for the page to load
+time.sleep(3)
+
+# Find and click on the first product from the displayed list
+product = driver.find_element(By.XPATH, "//div[@class='s-main-slot']//div[@data-index='1']")
+product.click()
+
+# Wait for the product page to load
+time.sleep(3)
+
+# Now, click on the search bar and enter the product name to search
+search_bar = driver.find_element(By.ID, "twotabsearchtextbox")
+product_name = driver.title  # Getting the product name from the product page
+search_bar.clear()
+search_bar.send_keys(product_name)  # Enter the product name into the search bar
+search_bar.send_keys(Keys.RETURN)  # Press Enter to search
+
+# Wait for the search results to load
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"""
+"""
+QUESTION 11
+-----------
+URL : https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp
+
+NOTE: Give details and register the form.
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()  # Replace with the appropriate driver for your browser
+
+# Open Google Sign-Up page
+driver.get("https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp")
+driver.maximize_window()
+
+# Wait for the page to load
+time.sleep(3)
+
+# Fill in the details
+
+# First Name
+first_name = driver.find_element(By.ID, "firstName")
+first_name.send_keys("John")
+
+# Last Name
+last_name = driver.find_element(By.ID, "lastName")
+last_name.send_keys("Doe")
+
+# Username (email)
+username = driver.find_element(By.ID, "username")
+username.send_keys("john.doe12345")  # Make sure the username is available
+
+# Password
+password = driver.find_element(By.NAME, "Passwd")
+password.send_keys("SecurePassword123")  # Replace with a valid password
+
+# Confirm Password
+confirm_password = driver.find_element(By.NAME, "ConfirmPasswd")
+confirm_password.send_keys("SecurePassword123")  # Make sure it matches the password
+
+# Click on the "Next" button to continue
+next_button = driver.find_element(By.XPATH, "//span[contains(text(), 'Next')]")
+next_button.click()
+
+# Wait for the next page to load
+time.sleep(5)
+
+# After the first page, there might be additional steps like phone verification. 
+# To fully automate, those would need handling too, but this script covers the basic form submission.
+
+# Close the browser
+driver.quit()
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"""
+
+"""
+
+QUESTION 12
+-----------
+URL : https://www.snapdeal.com/
+
+NOTE: Click signin and click new register and enter mobile number abd click continue.
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()  # Replace with the appropriate driver for your browser
+
+# Open Snapdeal website
+driver.get("https://www.snapdeal.com/")
+driver.maximize_window()
+
+# Wait for the page to load
+time.sleep(3)
+
+# Click on the "Sign In" button
+sign_in_button = driver.find_element(By.XPATH, "//span[text()='Sign In']")
+sign_in_button.click()
+
+# Wait for the sign-in page to load
+time.sleep(3)
+
+# Click on the "New Register" button
+new_register_button = driver.find_element(By.XPATH, "//a[text()='New to Snapdeal? Register']")
+new_register_button.click()
+
+# Wait for the registration form to appear
+time.sleep(3)
+
+# Enter mobile number (replace with the desired number)
+mobile_number_field = driver.find_element(By.ID, "userName")
+mobile_number_field.send_keys("9876543210")  # Replace with your mobile number
+
+# Click on the "Continue" button
+continue_button = driver.find_element(By.XPATH, "//button[text()='Continue']")
+continue_button.click()
+
+# Wait for the next page to load
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"""
+
+"""
+QUESTION 13
+-----------
+URL : https://www.myntra.com/register?referer=https://www.myntra.com/
+
+NOTE: Enter Mobile number and click continue
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()  # Replace with the appropriate driver for your browser
+
+# Open Myntra registration page
+driver.get("https://www.myntra.com/register?referer=https://www.myntra.com/")
+driver.maximize_window()
+
+# Wait for the page to load
+time.sleep(3)
+
+# Find the mobile number input field and enter a mobile number
+mobile_number_field = driver.find_element(By.XPATH, "//input[@type='tel']")
+mobile_number_field.send_keys("9876543210")  # Replace with your mobile number
+
+# Find the "Continue" button and click it
+continue_button = driver.find_element(By.XPATH, "//button[text()='Continue']")
+continue_button.click()
+
+# Wait for the next page to load (if applicable)
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"""
+
+"""
+QUESTION 14
+------------
+URL : https://www.swiggy.com/
+
+NOTE: Click sign up and Give details and register the form.
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()  # Replace with the appropriate driver for your browser
+
+# Open Swiggy website
+driver.get("https://www.swiggy.com/")
+driver.maximize_window()
+
+# Wait for the page to load
+time.sleep(3)
+
+# Click on the "Sign Up" button
+sign_up_button = driver.find_element(By.XPATH, "//a[text()='Sign Up']")
+sign_up_button.click()
+
+# Wait for the sign-up page to load
+time.sleep(3)
+
+# Fill in the registration form
+
+# Name field
+name_field = driver.find_element(By.NAME, "name")
+name_field.send_keys("John Doe")  # Replace with your name
+
+# Mobile Number field
+mobile_field = driver.find_element(By.NAME, "mobile")
+mobile_field.send_keys("9876543210")  # Replace with your mobile number
+
+# Email field
+email_field = driver.find_element(By.NAME, "email")
+email_field.send_keys("johndoe@example.com")  # Replace with your email
+
+# Password field
+password_field = driver.find_element(By.NAME, "password")
+password_field.send_keys("SecurePassword123")  # Replace with your password
+
+# Click on the "Sign Up" button
+sign_up_submit_button = driver.find_element(By.XPATH, "//button[text()='SIGN UP']")
+sign_up_submit_button.click()
+
+# Wait for the registration process to complete
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX"""
