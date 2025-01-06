@@ -251,6 +251,251 @@ URL : http://www.google.com/
 NOTE: Search greens velmurugan and click the 1st link.
 
 """
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
 
+# Initialize the WebDriver
+driver = webdriver.Chrome()
 
+# Open the Google URL
+driver.get("http://www.google.com/")
 
+# Locate the search bar and enter the query
+search_box = driver.find_element(By.NAME, "q")
+search_box.send_keys("greens velmurugan")  # Enter search query
+search_box.send_keys(Keys.RETURN)  # Simulate pressing the Enter key
+
+# Wait for the search results to load
+time.sleep(3)
+
+# Click the first link in the search results
+try:
+    first_link = driver.find_element(By.XPATH, "(//h3)[1]")  # Locate the first link using its <h3> tag
+    first_link.click()
+    print("Successfully clicked the first link.")
+except Exception as e:
+    print("Error clicking the first link:", e)
+
+# Close the WebDriver
+driver.quit()
+
+"""
+"""
+QUESTION  8
+------------
+URL : http://adactinhotelapp.com/
+
+NOTE: Print the UserName and Password that you are entered.
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the Adactin Hotel App URL
+driver.get("http://adactinhotelapp.com/")
+
+# Locate the username and password fields
+username_field = driver.find_element(By.ID, "username")
+password_field = driver.find_element(By.ID, "password")
+
+# Input username and password
+username_field.send_keys("TestUser123")
+password_field.send_keys("TestPassword456")
+
+# Retrieve and print the entered values
+username_value = username_field.get_attribute("value")
+password_value = password_field.get_attribute("value")
+
+print("Entered Username:", username_value)
+print("Entered Password:", password_value)
+
+# Close the WebDriver
+driver.quit()
+
+"""
+"""
+
+QUESTION 9
+-----------
+URL : https://www.snapdeal.com/ 
+
+NOTE: Search any product and click 1st product
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the Snapdeal URL
+driver.get("https://www.snapdeal.com/")
+
+# Search for a product (e.g., "laptop")
+search_box = driver.find_element(By.ID, "inputValEnter")
+search_box.send_keys("laptop")  # Enter the product name
+search_box.send_keys(Keys.RETURN)  # Press Enter to search
+
+# Wait for search results to load
+time.sleep(3)
+
+# Click the first product in the search results
+try:
+    first_product = driver.find_element(By.XPATH, "(//div[contains(@class, 'product-tuple-image')])[1]/a")  # XPath for the first product
+    first_product.click()
+    print("Successfully clicked the first product.")
+except Exception as e:
+    print("Error clicking the first product:", e)
+
+# Close the WebDriver
+driver.quit()
+
+"""
+"""
+QUESTION 10
+-----------
+URL : https://www.flipkart.com/ 
+
+NOTE: Search any product and click 1st product
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the Flipkart URL
+driver.get("https://www.flipkart.com/")
+
+# Close the login popup (if it appears)
+try:
+    close_popup = driver.find_element(By.XPATH, "//button[contains(text(),'✕')]")
+    close_popup.click()
+    print("Login popup closed.")
+except Exception as e:
+    print("Login popup not found or already closed.")
+
+# Locate the search bar and enter a product (e.g., "mobile")
+search_box = driver.find_element(By.NAME, "q")
+search_box.send_keys("mobile")  # Enter the product name
+search_box.send_keys(Keys.RETURN)  # Press Enter to search
+
+# Wait for search results to load
+time.sleep(3)
+
+# Click the first product in the search results
+try:
+    first_product = driver.find_element(By.XPATH, "(//div[contains(@class, '_1AtVbE') and .//a[contains(@class, '_1fQZEK')]])[1]//a")
+    first_product.click()
+    print("Successfully clicked the first product.")
+except Exception as e:
+    print("Error clicking the first product:", e)
+
+# Close the WebDriver
+driver.quit()
+
+xxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+
+QUESTION 11
+-----------
+URL : https://www.flipkart.com/ 
+
+NOTE: Click login and enter User name password
+      Print the details you are given.
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the Flipkart URL
+driver.get("https://www.flipkart.com/")
+
+# Wait for the page to load
+time.sleep(2)
+
+# Locate the username and password fields in the login popup
+try:
+    # Enter the username
+    username_field = driver.find_element(By.XPATH, "//input[@class='_2IX_2- VJZDxU']")
+    username_field.send_keys("test_user@gmail.com")
+    
+    # Enter the password
+    password_field = driver.find_element(By.XPATH, "//input[@type='password']")
+    password_field.send_keys("test_password123")
+    
+    # Retrieve and print the entered values
+    username_value = username_field.get_attribute("value")
+    password_value = password_field.get_attribute("value")
+    
+    print("Entered Username:", username_value)
+    print("Entered Password:", password_value)
+except Exception as e:
+    print("Error locating login fields or entering data:", e)
+
+# Close the WebDriver
+driver.quit()
+
+xxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 12
+-----------
+URL : https://www.shopclues.com/wholesale.html 
+
+NOTE: Search any product and click 1st product
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the ShopClues URL
+driver.get("https://www.shopclues.com/wholesale.html")
+
+# Locate the search bar and enter a product (e.g., "shoes")
+search_box = driver.find_element(By.ID, "autocomplete")
+search_box.send_keys("shoes")  # Enter the product name
+search_box.send_keys(Keys.RETURN)  # Press Enter to search
+
+# Wait for the search results to load
+time.sleep(3)
+
+# Click the first product in the search results
+try:
+    first_product = driver.find_element(By.XPATH, "(//div[contains(@class, 'column')])[1]//a")  # XPath for the first product
+    first_product.click()
+    print("Successfully clicked the first product.")
+except Exception as e:
+    print("Error clicking the first product:", e)
+
+# Close the WebDriver
+driver.quit()
+
+"""
