@@ -459,3 +459,792 @@ NOTE: Courses  is first mouseover
       click microstategy training.
 
 """
+"""
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the specified URL
+url = "http://greenstech.in/selenium-course-content.html"
+driver.get(url)
+
+# Maximize the browser window
+driver.maximize_window()
+
+# Add a short delay to allow the page to load completely
+time.sleep(3)
+
+# Locate the "Courses" menu
+courses_menu = driver.find_element("xpath", "//div[contains(text(), 'Courses')]")
+
+# Perform mouseover on the "Courses" menu
+action = ActionChains(driver)
+action.move_to_element(courses_menu).perform()
+
+# Add a short delay to ensure the submenu loads
+time.sleep(2)
+
+# Locate the "Data Warehouse Training" submenu
+data_warehouse_training = driver.find_element("xpath", "//span[text()='Data Warehousing Training']")
+
+# Perform mouseover on the "Data Warehouse Training" submenu
+action.move_to_element(data_warehouse_training).perform()
+
+# Add a short delay to ensure the next submenu loads
+time.sleep(2)
+
+# Locate and click the "MicroStrategy Training" link
+microstrategy_training = driver.find_element("xpath", "//span[text()='Microstrategy Training']")
+microstrategy_training.click()
+
+# Add a short delay to observe the result
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+
+xxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 9
+-----------
+URL : http://greenstech.in/selenium-course-content.html
+
+NOTE: Courses  is first mouseover
+      RPA is second mouseover
+      Click Blue prism Certification training
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the specified URL
+url = "http://greenstech.in/selenium-course-content.html"
+driver.get(url)
+
+# Maximize the browser window
+driver.maximize_window()
+
+# Add a short delay to allow the page to load completely
+time.sleep(3)
+
+# Locate the "Courses" menu
+courses_menu = driver.find_element("xpath", "//div[contains(text(), 'Courses')]")
+
+# Perform mouseover on the "Courses" menu
+action = ActionChains(driver)
+action.move_to_element(courses_menu).perform()
+
+# Add a short delay to ensure the submenu loads
+time.sleep(2)
+
+# Locate the "RPA" submenu
+rpa_menu = driver.find_element("xpath", "//span[text()='RPA (Robotic Process Automation) Training']")
+
+# Perform mouseover on the "RPA" submenu
+action.move_to_element(rpa_menu).perform()
+
+# Add a short delay to ensure the next submenu loads
+time.sleep(2)
+
+# Locate and click the "Blue Prism Certification Training" link
+blue_prism_training = driver.find_element("xpath", "//span[text()='Blue Prism Certification Training']")
+blue_prism_training.click()
+
+# Add a short delay to observe the result
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+
+xxxxxxxxxxxxxxxx"""
+
+"""
+
+QUESTION 10
+-----------
+URL : http://greenstech.in/selenium-course-content.html
+
+NOTE: Courses is first mouseover
+      Data Warehousing is second mouseover
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the specified URL
+url = "http://greenstech.in/selenium-course-content.html"
+driver.get(url)
+
+# Maximize the browser window
+driver.maximize_window()
+
+# Add a short delay to allow the page to load completely
+time.sleep(3)
+
+# Locate the "Courses" menu
+courses_menu = driver.find_element("xpath", "//div[contains(text(), 'Courses')]")
+
+# Perform mouseover on the "Courses" menu
+action = ActionChains(driver)
+action.move_to_element(courses_menu).perform()
+
+# Add a short delay to ensure the submenu loads
+time.sleep(2)
+
+# Locate the "Data Warehousing" submenu
+data_warehousing_menu = driver.find_element("xpath", "//span[text()='Data Warehousing Training']")
+
+# Perform mouseover on the "Data Warehousing" submenu
+action.move_to_element(data_warehousing_menu).perform()
+
+# Add a short delay to observe the submenu
+time.sleep(3)
+
+# Close the browser
+driver.quit()
+
+xxxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 11
+-----------
+URL : https://www.homedepot.com/
+
+NOTE: Alldepartment  is first mouseover
+      Heating and cooling  is second  mouseover
+      Air conditioners is third mouseover 
+      Click portable air conditioners.
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the specified URL
+url = "https://www.homedepot.com/"
+driver.get(url)
+
+# Maximize the browser window
+driver.maximize_window()
+
+# Add a short delay to allow the page to load completely
+time.sleep(5)
+
+# Locate the "All Departments" menu
+all_departments = driver.find_element("xpath", "//a[@data-id='departmentsFlyout']")
+
+# Perform mouseover on "All Departments"
+action = ActionChains(driver)
+action.move_to_element(all_departments).perform()
+
+# Add a short delay to ensure the submenu loads
+time.sleep(2)
+
+# Locate the "Heating & Cooling" submenu
+heating_and_cooling = driver.find_element("xpath", "//a[text()='Heating & Cooling']")
+
+# Perform mouseover on "Heating & Cooling"
+action.move_to_element(heating_and_cooling).perform()
+
+# Add a short delay to ensure the next submenu loads
+time.sleep(2)
+
+# Locate the "Air Conditioners" submenu
+air_conditioners = driver.find_element("xpath", "//a[text()='Air Conditioners']")
+
+# Perform mouseover on "Air Conditioners"
+action.move_to_element(air_conditioners).perform()
+
+# Add a short delay to ensure the next submenu loads
+time.sleep(2)
+
+# Locate and click the "Portable Air Conditioners" link
+portable_air_conditioners = driver.find_element("xpath", "//a[text()='Portable Air Conditioners']")
+portable_air_conditioners.click()
+
+# Add a short delay to observe the result
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+
+"""
+"""
+
+QUESTION 12
+-----------
+URL : https://www.homedepot.com/ 
+
+NOTE: All department is first mouseover 
+      Paint is second mouseover
+      Interior painting is third mouseover
+      Click celling paint.
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the specified URL
+url = "https://www.homedepot.com/"
+driver.get(url)
+
+# Maximize the browser window
+driver.maximize_window()
+
+# Add a short delay to allow the page to load completely
+time.sleep(5)
+
+# Locate the "All Departments" menu
+all_departments = driver.find_element("xpath", "//a[@data-id='departmentsFlyout']")
+
+# Perform mouseover on "All Departments"
+action = ActionChains(driver)
+action.move_to_element(all_departments).perform()
+
+# Add a short delay to ensure the submenu loads
+time.sleep(2)
+
+# Locate the "Paint" submenu
+paint_menu = driver.find_element("xpath", "//a[text()='Paint']")
+
+# Perform mouseover on "Paint"
+action.move_to_element(paint_menu).perform()
+
+# Add a short delay to ensure the next submenu loads
+time.sleep(2)
+
+# Locate the "Interior Painting" submenu
+interior_painting = driver.find_element("xpath", "//a[text()='Interior Painting']")
+
+# Perform mouseover on "Interior Painting"
+action.move_to_element(interior_painting).perform()
+
+# Add a short delay to ensure the next submenu loads
+time.sleep(2)
+
+# Locate and click the "Ceiling Paint" link
+ceiling_paint = driver.find_element("xpath", "//a[text()='Ceiling Paint']")
+ceiling_paint.click()
+
+# Add a short delay to observe the result
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+
+xxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 13
+-----------
+URL :  https://www.snapdeal.com/
+
+NOTE:  Mobile & Tablets is first mouseover
+       Click newly lanuch covers.
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the specified URL
+url = "https://www.snapdeal.com/"
+driver.get(url)
+
+# Maximize the browser window
+driver.maximize_window()
+
+# Add a short delay to allow the page to load completely
+time.sleep(5)
+
+# Locate the "Mobile & Tablets" menu
+mobile_and_tablets_menu = driver.find_element("xpath", "//span[text()='Mobile & Tablets']")
+
+# Perform mouseover on the "Mobile & Tablets" menu
+action = ActionChains(driver)
+action.move_to_element(mobile_and_tablets_menu).perform()
+
+# Add a short delay to ensure the submenu loads
+time.sleep(2)
+
+# Locate the "Newly Launch Covers" link
+newly_launch_covers = driver.find_element("xpath", "//span[text()='Newly Launch Covers']")
+
+# Click on the "Newly Launch Covers" link
+newly_launch_covers.click()
+
+# Add a short delay to observe the result
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+
+xxxxxxxxxxxxxxxxxxxx"""
+
+"""
+
+QUESTION 14
+-----------
+URL : https://www.snapdeal.com/
+
+NOTE: Women's Fashion is first mouseover
+      Click footwear->click heals.
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the specified URL
+url = "https://www.snapdeal.com/"
+driver.get(url)
+
+# Maximize the browser window
+driver.maximize_window()
+
+# Add a short delay to allow the page to load completely
+time.sleep(5)
+
+# Locate the "Women's Fashion" menu
+womens_fashion_menu = driver.find_element("xpath", "//span[text()='Women's Fashion']")
+
+# Perform mouseover on the "Women's Fashion" menu
+action = ActionChains(driver)
+action.move_to_element(womens_fashion_menu).perform()
+
+# Add a short delay to ensure the submenu loads
+time.sleep(2)
+
+# Locate and click the "Footwear" link
+footwear_link = driver.find_element("xpath", "//span[text()='Footwear']")
+
+# Click on the "Footwear" link
+footwear_link.click()
+
+# Add a short delay to ensure the page loads
+time.sleep(3)
+
+# Locate and click the "Heels" category
+heels_category = driver.find_element("xpath", "//span[text()='Heels']")
+
+# Click on the "Heels" link
+heels_category.click()
+
+# Add a short delay to observe the result
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+
+xxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+
+QUESTION 15
+-----------
+URL : https://www.amazon.in/
+
+NOTE: Signin is first mouseover
+      Click Register
+      Give details for Register
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the specified URL
+url = "https://www.amazon.in/"
+driver.get(url)
+
+# Maximize the browser window
+driver.maximize_window()
+
+# Add a short delay to allow the page to load completely
+time.sleep(5)
+
+# Locate the "Sign In" menu
+sign_in_menu = driver.find_element("xpath", "//span[@class='nav-line-2' and text()='Hello, Sign in']")
+
+# Perform mouseover on the "Sign In" menu
+action = ActionChains(driver)
+action.move_to_element(sign_in_menu).perform()
+
+# Add a short delay to ensure the submenu loads
+time.sleep(2)
+
+# Locate and click the "Start here" (Register) link
+register_link = driver.find_element("xpath", "//a[text()='Start here.']")
+
+# Click on the "Register" link
+register_link.click()
+
+# Add a short delay to ensure the Register page loads
+time.sleep(3)
+
+# Enter details in the registration form
+# Locate the name input field and enter a name
+name_input = driver.find_element("xpath", "//input[@name='customerName']")
+name_input.send_keys("John Doe")
+
+# Locate the email input field and enter an email
+email_input = driver.find_element("xpath", "//input[@name='email']")
+email_input.send_keys("johndoe@example.com")
+
+# Locate the password input field and enter a password
+password_input = driver.find_element("xpath", "//input[@name='password']")
+password_input.send_keys("StrongPassword123")
+
+# Locate the password check field and re-enter the password
+password_check_input = driver.find_element("xpath", "//input[@name='passwordCheck']")
+password_check_input.send_keys("StrongPassword123")
+
+# Submit the registration form
+password_check_input.send_keys(Keys.RETURN)
+
+# Add a short delay to observe the result
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+xxxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTON 16
+----------
+URL : https://www.amazon.in/
+
+NOTE: signin is a first mouseover
+      Click SD Cash
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the specified URL
+url = "https://www.amazon.in/"
+driver.get(url)
+
+# Maximize the browser window
+driver.maximize_window()
+
+# Add a short delay to allow the page to load completely
+time.sleep(5)
+
+# Locate the "Sign In" menu
+sign_in_menu = driver.find_element("xpath", "//span[@class='nav-line-2' and text()='Hello, Sign in']")
+
+# Perform mouseover on the "Sign In" menu
+action = ActionChains(driver)
+action.move_to_element(sign_in_menu).perform()
+
+# Add a short delay to ensure the submenu loads
+time.sleep(2)
+
+# Locate and click the "SD Cash" link
+# (Please check the specific XPath for SD Cash, which may vary depending on how it is displayed in the menu or on the page)
+sd_cash_link = driver.find_element("xpath", "//span[text()='SD Cash']")
+
+# Click on the "SD Cash" link
+sd_cash_link.click()
+
+# Add a short delay to observe the result
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+
+xxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 17
+-----------
+URL : https://www.flipkart.com/
+
+NOTE: womens is mouseover
+      Click flat slipper
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the specified URL
+url = "https://www.flipkart.com/"
+driver.get(url)
+
+# Maximize the browser window
+driver.maximize_window()
+
+# Add a short delay to allow the page to load completely
+time.sleep(5)
+
+# Close the login popup if it appears
+try:
+    close_popup = driver.find_element("xpath", "//button[contains(text(), '✕')]")
+    close_popup.click()
+    time.sleep(2)
+except:
+    pass
+
+# Locate the "Womens" menu
+womens_menu = driver.find_element("xpath", "//div[text()='Women']")
+
+# Perform mouseover on the "Womens" menu
+action = ActionChains(driver)
+action.move_to_element(womens_menu).perform()
+
+# Add a short delay to ensure the submenu loads
+time.sleep(2)
+
+# Locate and click the "Flat Slippers" category
+flat_slippers_link = driver.find_element("xpath", "//a[text()='Flat Slippers']")
+
+# Click on the "Flat Slippers" link
+flat_slippers_link.click()
+
+# Add a short delay to observe the result
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+
+xxxxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 18
+-----------
+URL : https://www.flipkart.com/
+
+NOTE: Baby&Kids is mouseover
+      Click Remote Control Toys
+
+"""
+""""
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the specified URL
+url = "https://www.flipkart.com/"
+driver.get(url)
+
+# Maximize the browser window
+driver.maximize_window()
+
+# Add a short delay to allow the page to load completely
+time.sleep(5)
+
+# Close the login popup if it appears
+try:
+    close_popup = driver.find_element("xpath", "//button[contains(text(), '✕')]")
+    close_popup.click()
+    time.sleep(2)
+except:
+    pass
+
+# Locate the "Baby & Kids" menu
+baby_and_kids_menu = driver.find_element("xpath", "//div[text()='Baby & Kids']")
+
+# Perform mouseover on the "Baby & Kids" menu
+action = ActionChains(driver)
+action.move_to_element(baby_and_kids_menu).perform()
+
+# Add a short delay to ensure the submenu loads
+time.sleep(2)
+
+# Locate and click the "Remote Control Toys" category
+remote_control_toys_link = driver.find_element("xpath", "//a[text()='Remote Control Toys']")
+
+# Click on the "Remote Control Toys" link
+remote_control_toys_link.click()
+
+# Add a short delay to observe the result
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+
+xxxxxxxxxxxxxxxx """
+
+"""
+QUESTION 19
+-----------
+URL : https://www.flipkart.com/
+
+NOTE: Electronics is mouseover
+      Click Realme
+      Click 1st Product name
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the specified URL
+url = "https://www.flipkart.com/"
+driver.get(url)
+
+# Maximize the browser window
+driver.maximize_window()
+
+# Add a short delay to allow the page to load completely
+time.sleep(5)
+
+# Close the login popup if it appears
+try:
+    close_popup = driver.find_element("xpath", "//button[contains(text(), '✕')]")
+    close_popup.click()
+    time.sleep(2)
+except:
+    pass
+
+# Locate the "Electronics" menu
+electronics_menu = driver.find_element("xpath", "//div[text()='Electronics']")
+
+# Perform mouseover on the "Electronics" menu
+action = ActionChains(driver)
+action.move_to_element(electronics_menu).perform()
+
+# Add a short delay to ensure the submenu loads
+time.sleep(2)
+
+# Locate and click the "Realme" link
+realme_link = driver.find_element("xpath", "//a[text()='Realme']")
+realme_link.click()
+
+# Add a short delay to ensure the page loads with products
+time.sleep(3)
+
+# Locate and click the first product name on the page
+first_product = driver.find_element("xpath", "(//a[@class='_1fQZEK'])[1]")
+
+# Click on the first product
+first_product.click()
+
+# Add a short delay to observe the result
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+
+xxxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 20
+-----------
+URL : https://www.flipkart.com/
+
+NOTE: Tvs & Appliances  is mouseover
+      Click Mi
+      Click 1st Product name
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()
+
+# Open the specified URL
+url = "https://www.flipkart.com/"
+driver.get(url)
+
+# Maximize the browser window
+driver.maximize_window()
+
+# Add a short delay to allow the page to load completely
+time.sleep(5)
+
+# Close the login popup if it appears
+try:
+    close_popup = driver.find_element("xpath", "//button[contains(text(), '✕')]")
+    close_popup.click()
+    time.sleep(2)
+except:
+    pass
+
+# Locate the "TVs & Appliances" menu
+tvs_and_appliances_menu = driver.find_element("xpath", "//div[text()='TVs & Appliances']")
+
+# Perform mouseover on the "TVs & Appliances" menu
+action = ActionChains(driver)
+action.move_to_element(tvs_and_appliances_menu).perform()
+
+# Add a short delay to ensure the submenu loads
+time.sleep(2)
+
+# Locate and click the "Mi" link
+mi_link = driver.find_element("xpath", "//a[text()='Mi']")
+mi_link.click()
+
+# Add a short delay to ensure the page loads with products
+time.sleep(3)
+
+# Locate and click the first product name on the page
+first_product = driver.find_element("xpath", "(//a[@class='_1fQZEK'])[1]")
+
+# Click on the first product
+first_product.click()
+
+# Add a short delay to observe the result
+time.sleep(5)
+
+# Close the browser
+driver.quit()
+
+xxxxxxxxxxxxxxxx"""
