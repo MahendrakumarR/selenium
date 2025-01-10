@@ -315,6 +315,14 @@ finally:
 xxxxxxxxxxxxxxxxxxxxxxxx"""
 
 """
+QUESTION 6 
+----------
+URL : http://greenstech.in/selenium-course-content.html
+
+NOTE: Course is first mouseover
+      Software testing training is second mouseover  
+      Click selenium training 
 
 """
+
 
