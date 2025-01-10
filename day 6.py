@@ -162,3 +162,417 @@ finally:
     # Close the browser
     driver.quit()
 """
+"""
+QUESTION 3
+----------
+URL : http://greenstech.in/selenium-course-content.html
+
+NOTE: Click interview question and Right click cts interview question and Select open link in new window
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Set up the WebDriver
+driver = webdriver.Chrome()
+
+try:
+    # Open the URL
+    driver.get("http://greenstech.in/selenium-course-content.html")
+    driver.maximize_window()
+
+    # Locate and click "Interview Question"
+    interview_question = driver.find_element(By.LINK_TEXT, "Interview Question")
+    interview_question.click()
+    time.sleep(2)
+
+    # Locate the "CTS Interview Question" link
+    cts_interview_question = driver.find_element(By.LINK_TEXT, "CTS Interview Question")
+
+    # Right-click on the "CTS Interview Question" link
+    actions = ActionChains(driver)
+    actions.context_click(cts_interview_question).perform()
+
+    # Open link in a new window using keyboard shortcut
+    actions.send_keys(Keys.CONTROL + Keys.RETURN).perform()
+
+    # Wait to see the action in the new window
+    time.sleep(5)
+
+finally:
+    # Close the browser
+    driver.quit()
+xxxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 4
+----------
+URL : http://greenstech.in/selenium-course-content.html
+
+NOTE: Right Click Framework Test Papers  and Select Inspect
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Set up the WebDriver
+driver = webdriver.Chrome()
+
+try:
+    # Open the URL
+    driver.get("http://greenstech.in/selenium-course-content.html")
+    driver.maximize_window()
+
+    # Locate the "Framework Test Papers" link
+    framework_test_papers = driver.find_element(By.LINK_TEXT, "Framework Test Papers")
+
+    # Right-click on the "Framework Test Papers" link
+    actions = ActionChains(driver)
+    actions.context_click(framework_test_papers).perform()
+
+    # Wait for some time to observe the action
+    time.sleep(5)
+
+finally:
+    # Close the browser
+    driver.quit()
+xxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 5
+-----------
+URL : http://greenstech.in/selenium-course-content.html
+
+NOTE: Click Model Resume and  rightClick resume model 4 the page and click save as.
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Set up the WebDriver
+driver = webdriver.Chrome()
+
+try:
+    # Open the URL
+    driver.get("http://greenstech.in/selenium-course-content.html")
+    driver.maximize_window()
+
+    # Locate and click on "Model Resume"
+    model_resume_link = driver.find_element(By.LINK_TEXT, "Model Resume")
+    model_resume_link.click()
+    time.sleep(2)  # Wait for the page to load if required
+
+    # Locate the "Resume Model 4" link
+    resume_model_4_link = driver.find_element(By.LINK_TEXT, "Resume Model 4")
+
+    # Right-click on "Resume Model 4" (this doesn't open "Save As", just simulates the right-click)
+    actions = ActionChains(driver)
+    actions.context_click(resume_model_4_link).perform()
+
+    # Wait to observe the right-click action
+    time.sleep(5)
+
+finally:
+    # Close the browser
+    driver.quit()
+xxxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 6
+-----------
+URL : http://greenstech.in/selenium-course-content.html
+
+NOTE: Right Click RPA [ below Top Selenium Trends In 2020] and click Inspect
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Set up the WebDriver
+driver = webdriver.Chrome()
+
+try:
+    # Open the URL
+    driver.get("http://greenstech.in/selenium-course-content.html")
+    driver.maximize_window()
+
+    # Locate the "RPA" link below "Top Selenium Trends In 2020"
+    rpa_link = driver.find_element(By.XPATH, "//h2[text()='Top Selenium Trends In 2020']/following::a[text()='RPA']")
+
+    # Right-click (context-click) on the "RPA" link
+    actions = ActionChains(driver)
+    actions.context_click(rpa_link).perform()
+
+    # Wait for some time to observe the right-click action
+    time.sleep(5)
+
+finally:
+    # Close the browser
+    driver.quit()
+xxxxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 7
+----------
+URL : http://greenstech.in/selenium-course-content.html
+
+NOTE: Click Selenium Test Papaers Right Click Day 6 Robot and select Inspect
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Set up the WebDriver
+driver = webdriver.Chrome()
+
+try:
+    # Open the URL
+    driver.get("http://greenstech.in/selenium-course-content.html")
+    driver.maximize_window()
+
+    # Locate and click on "Selenium Test Papers"
+    selenium_test_papers_link = driver.find_element(By.LINK_TEXT, "Selenium Test Papers")
+    selenium_test_papers_link.click()
+    time.sleep(2)  # Wait for the page to load if necessary
+
+    # Locate the "Day 6 Robot" link
+    day_6_robot_link = driver.find_element(By.LINK_TEXT, "Day 6 Robot")
+
+    # Right-click (context-click) on the "Day 6 Robot" link
+    actions = ActionChains(driver)
+    actions.context_click(day_6_robot_link).perform()
+
+    # Wait for some time to observe the right-click action
+    time.sleep(5)
+
+finally:
+    # Close the browser
+    driver.quit()
+xxxxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+
+Question 8
+----------
+URL : https://www.flipkart.com/
+
+NOTE: Click login
+      Type a  name in email textbox and cut using (control +c) and paste in password using (control+v)
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Set up the WebDriver
+driver = webdriver.Chrome()
+
+try:
+    # Open Flipkart login page
+    driver.get("https://www.flipkart.com/")
+    driver.maximize_window()
+
+    # Wait for page to load and close the pop-up
+    time.sleep(3)
+    close_button = driver.find_element(By.XPATH, "//button[text()='✕']")
+    close_button.click()
+
+    # Click on the Login button
+    login_button = driver.find_element(By.XPATH, "//a[@href='/account/login']")
+    login_button.click()
+    time.sleep(2)  # Wait for the login page to load
+
+    # Locate the email text box and type a name
+    email_textbox = driver.find_element(By.XPATH, "//input[@class='_2IX_2- VJZDxU']")
+    email_textbox.send_keys("TestName")
+
+    # Cut the text using Ctrl+C (simulating cut)
+    actions = ActionChains(driver)
+    actions.key_down(Keys.CONTROL).send_keys('c').key_up(Keys.CONTROL).perform()
+    time.sleep(1)
+
+    # Locate the password text box and paste the text using Ctrl+V (simulating paste)
+    password_textbox = driver.find_element(By.XPATH, "//input[@type='password']")
+    actions.key_down(Keys.CONTROL).send_keys('v').key_up(Keys.CONTROL).perform()
+
+    # Wait to observe the actions
+    time.sleep(3)
+
+finally:
+    # Close the browser
+    driver.quit()
+xxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 9
+------------
+URL : https://www.amazon.in/
+
+NOTE: Click login and type a  email in email textbox and select email and right click and click cut 
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Set up the WebDriver
+driver = webdriver.Chrome()
+
+try:
+    # Open the Amazon URL
+    driver.get("https://www.amazon.in/")
+    driver.maximize_window()
+
+    # Wait for the page to load
+    time.sleep(3)
+
+    # Click on the Login button
+    login_button = driver.find_element(By.XPATH, "//span[text()='Hello, Sign in']")
+    login_button.click()
+    time.sleep(2)  # Wait for the login page to load
+
+    # Locate the email textbox and type an email
+    email_textbox = driver.find_element(By.ID, "ap_email")
+    email_textbox.send_keys("testemail@example.com")
+    time.sleep(1)
+
+    # Select the email text (simulating the "Ctrl + A" shortcut)
+    actions = ActionChains(driver)
+    actions.move_to_element(email_textbox).click().key_down(Keys.CONTROL).send_keys('a').key_up(Keys.CONTROL).perform()
+    time.sleep(1)
+
+    # Right-click (context-click) and simulate 'Cut' using "Ctrl + X"
+    actions.context_click(email_textbox).key_down(Keys.CONTROL).send_keys('x').key_up(Keys.CONTROL).perform()
+
+    # Wait to observe the actions
+    time.sleep(3)
+
+finally:
+    # Close the browser
+    driver.quit()
+
+xxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 10
+-----------
+URL : https://www.snapdeal.com/offers/quirky
+
+NOTE: Select any item and then right click and press open in a new window
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Set up the WebDriver
+driver = webdriver.Chrome()
+
+try:
+    # Open the Snapdeal quirky offers page
+    driver.get("https://www.snapdeal.com/offers/quirky")
+    driver.maximize_window()
+
+    # Wait for the page to load
+    time.sleep(3)
+
+    # Select an item (just selecting the first item in the list as an example)
+    first_item = driver.find_element(By.XPATH, "//div[@class='product-tuple-image ']//a")
+    first_item.click()
+
+    # Wait for the product page to load (optional)
+    time.sleep(2)
+
+    # Simulate opening the link in a new window (Ctrl + Click)
+    actions = ActionChains(driver)
+    actions.key_down(Keys.CONTROL).click(first_item).key_up(Keys.CONTROL).perform()
+
+    # Wait to observe the actions
+    time.sleep(5)
+
+finally:
+    # Close the browser
+    driver.quit()
+
+xxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+
+QUESTION 11
+-----------
+URL : https://www.flipkart.com/
+
+NOTE: Select any item and then right click and press Save link as
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import requests
+import time
+
+# Set up the WebDriver
+driver = webdriver.Chrome()
+
+try:
+    # Open Flipkart URL
+    driver.get("https://www.flipkart.com/")
+    driver.maximize_window()
+
+    # Wait for the page to load and close any pop-up
+    time.sleep(3)
+    close_button = driver.find_element(By.XPATH, "//button[text()='✕']")
+    close_button.click()
+
+    # Select the first product link on the page (you can modify the XPath to select any product)
+    product_link = driver.find_element(By.XPATH, "//a[@class='_1fQZEK']")
+    
+    # Get the product URL
+    product_url = product_link.get_attribute("href")
+
+    # Use the requests library to download the product URL (or save it as required)
+    # Example: Let's download the image associated with the product
+    print(f"Downloading the content from: {product_url}")
+    response = requests.get(product_url)
+
+    # Save the content to a file (you can modify the filename or content as needed)
+    with open("product_page.html", "w", encoding="utf-8") as file:
+        file.write(response.text)
+
+    print("File saved successfully!")
+
+finally:
+    # Close the browser
+    driver.quit()
+"""
+
+
+
+
+
