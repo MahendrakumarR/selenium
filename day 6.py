@@ -117,212 +117,48 @@ driver.quit()
 
 """
 QUESTION 2
------------
-URL:  http://www.amazon.in
-
-NOTE: Try Prime first mouseover
-      Click Free fast delievery on prime items
-
-"""
-"""
-from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.by import By
-import time
-
-# Set up the WebDriver (assuming you have ChromeDriver installed)
-driver = webdriver.Chrome()
-
-try:
-    # Open Amazon India
-    driver.get("http://www.amazon.in")
-    driver.maximize_window()
-    
-    # Locate the "Try Prime" menu using its XPath or CSS selector
-    try_prime_element = driver.find_element(By.XPATH, "//span[contains(text(), 'Try Prime')]")
-    
-    # Perform mouseover using ActionChains
-    actions = ActionChains(driver)
-    actions.move_to_element(try_prime_element).perform()
-    
-    # Allow time for the dropdown to appear
-    time.sleep(2)
-    
-    # Locate and click "Free fast delivery on Prime items"
-    free_delivery_element = driver.find_element(By.LINK_TEXT, "Free fast delivery on Prime items")
-    free_delivery_element.click()
-    
-    # Wait for a while to observe the result
-    time.sleep(5)
-
-finally:
-    # Close the browser
-    driver.quit()
-xxxxxxxxxxxxxxxxxxxxxxx"""
-
-"""
-QUESTION 3
 ----------
-URL : http://www.flipkart.com
+URL : https://www.google.co.in/webhp 
 
-NOTE: Home & Furniture is first mouseover 
-      Click Bath Towels and print any product name 
-
-"""
-"""
-from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.by import By
-import time
-
-# Set up the WebDriver (assuming you have ChromeDriver installed)
-driver = webdriver.Chrome()
-
-try:
-    # Open Flipkart
-    driver.get("http://www.flipkart.com")
-    driver.maximize_window()
-
-    # Close the login popup (pressing the Escape key or clicking the close button)
-    try:
-        close_popup = driver.find_element(By.XPATH, "//button[contains(text(), '✕')]")
-        close_popup.click()
-    except Exception as e:
-        print("No popup to close:", e)
-
-    # Locate the "Home & Furniture" menu
-    home_furniture = driver.find_element(By.XPATH, "//span[text()='Home & Furniture']")
-
-    # Perform mouseover using ActionChains
-    actions = ActionChains(driver)
-    actions.move_to_element(home_furniture).perform()
-
-    # Allow time for the dropdown to appear
-    time.sleep(2)
-
-    # Locate and click "Bath Towels"
-    bath_towels = driver.find_element(By.LINK_TEXT, "Bath Towels")
-    bath_towels.click()
-
-    # Wait for the page to load
-    time.sleep(5)
-
-    # Find and print the name of any product
-    product_name = driver.find_element(By.XPATH, "//a[contains(@class, 'IRpwTa')]").text
-    print("Product Name:", product_name)
-
-finally:
-    # Close the browser
-    driver.quit()
-xxxxxxxxxxxxxxxxxxxxxxxxx"""
-
-"""
-
-QUESTION 4
-----------
-URL : https://www.shopclues.com/wholesale.html
- 
-NOTE: Mobile and electronics is first mouseover 
-      Click Smart Phones range Rs5001 - Rs10000
+NOTE: Enter Vel Murugan and select Vel Murugan using double Click
+      Cut Vel Murugan using Keyboard shortcut[Ctrl+x]
 
 """
 """
 from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 import time
 
 # Set up the WebDriver
 driver = webdriver.Chrome()
 
 try:
-    # Open ShopClues
-    driver.get("https://www.shopclues.com/wholesale.html")
+    # Open Google homepage
+    driver.get("https://www.google.co.in/webhp")
     driver.maximize_window()
 
-    # Locate the "Mobiles & Electronics" menu
-    mobiles_electronics = driver.find_element(By.XPATH, "//a[text()='Mobiles & Electronics']")
+    # Locate the search bar
+    search_box = driver.find_element(By.NAME, "q")
 
-    # Perform mouseover using ActionChains
+    # Enter "Vel Murugan" in the search bar
+    search_box.send_keys("Vel Murugan")
+    time.sleep(1)
+
+    # Select "Vel Murugan" using double-click
     actions = ActionChains(driver)
-    actions.move_to_element(mobiles_electronics).perform()
+    actions.double_click(search_box).perform()
+    time.sleep(1)
 
-    # Allow time for the dropdown to appear
-    time.sleep(2)
+    # Cut the text using Ctrl+X
+    search_box.send_keys(Keys.CONTROL, "x")
+    time.sleep(1)
 
-    # Locate and click "Smart Phones range Rs5001 - Rs10000"
-    smartphones_range = driver.find_element(By.XPATH, "//a[text()='Smart Phones range Rs5001 - Rs10000']")
-    smartphones_range.click()
-
-    # Wait for the page to load
-    time.sleep(5)
-
-    # Print the page title to confirm navigation
-    print("Page Title:", driver.title)
+    # Confirm the search bar is empty
+    print("Search bar text after cut:", search_box.get_attribute("value"))
 
 finally:
     # Close the browser
     driver.quit()
-
-xxxxxxxxxxxxxxxxxxxxx"""
-
 """
-QUESTION 5
-----------
-URL : https://www.shopclues.com/wholesale.html 
- 
-NOTE: Sports&more  is first mouseover
-      Click weights grainers
-
-"""
-"""
-from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.by import By
-import time
-
-# Set up the WebDriver
-driver = webdriver.Chrome()
-
-try:
-    # Open ShopClues
-    driver.get("https://www.shopclues.com/wholesale.html")
-    driver.maximize_window()
-
-    # Locate the "Sports & More" menu
-    sports_more = driver.find_element(By.XPATH, "//a[text()='Sports & More']")
-
-    # Perform mouseover using ActionChains
-    actions = ActionChains(driver)
-    actions.move_to_element(sports_more).perform()
-
-    # Allow time for the dropdown to appear
-    time.sleep(2)
-
-    # Locate and click "Weights Grainers"
-    weights_trainers = driver.find_element(By.XPATH, "//a[text()='Weights Grainers']")
-    weights_trainers.click()
-
-    # Wait for the page to load
-    time.sleep(5)
-
-    # Print the page title to confirm navigation
-    print("Page Title:", driver.title)
-
-finally:
-    # Close the browser
-    driver.quit()
-xxxxxxxxxxxxxxxxxxxxxxxx"""
-
-"""
-QUESTION 6 
-----------
-URL : http://greenstech.in/selenium-course-content.html
-
-NOTE: Course is first mouseover
-      Software testing training is second mouseover  
-      Click selenium training 
-
-"""
-
-
