@@ -152,4 +152,43 @@ time.sleep(3)
 # Close the browser
 driver.quit()
 
+xxxxxxxxxxxxxxxxxxxxxxxxx"""
 """
+QUESTION 4
+----------
+URL : http://www.greenstechnologys.com/
+
+NOTE: Scroll Down till "Greens technology Perumbakkam. address "and Take  screenshot 
+
+"""
+"""
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+# Set up the WebDriver (e.g., using Chrome)
+driver = webdriver.Chrome()
+
+# Open the URL
+driver.get("http://www.greenstechnologys.com/")
+
+# Wait for the page to load completely
+time.sleep(2)
+
+# Locate the "Greens technology Perumbakkam address" section
+address_section = driver.find_element(By.XPATH, "//*[contains(text(), 'Greens technology Perumbakkam')]")
+
+# Scroll down to the "Greens technology Perumbakkam address" section
+driver.execute_script("arguments[0].scrollIntoView();", address_section)
+
+# Wait for the scroll to complete
+time.sleep(2)
+
+# Take a screenshot and save it
+driver.save_screenshot("perumbakkam_address_screenshot.png")
+
+# Close the browser
+driver.quit()
+
+xxxxxxxxxxxxxxxxxxx"""
