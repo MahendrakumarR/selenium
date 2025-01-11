@@ -123,3 +123,33 @@ URL : http://toolsqa.com/
 NOTE: Scrolldown till "Selenium Training Benefit" and print the word "Selenium Training Benefit"
 
 """
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+# Set up the WebDriver (e.g., using Chrome)
+driver = webdriver.Chrome()
+
+# Open the URL
+driver.get("http://toolsqa.com/")
+
+# Wait for the page to load completely
+time.sleep(2)
+
+# Locate the "Selenium Training Benefit" section
+selenium_training = driver.find_element(By.XPATH, "//*[text()='Selenium Training Benefit']")
+
+# Scroll down to the "Selenium Training Benefit" section
+driver.execute_script("arguments[0].scrollIntoView();", selenium_training)
+
+# Print the text of the section
+print(selenium_training.text)
+
+# Optional: Pause to visually confirm the scroll
+time.sleep(3)
+
+# Close the browser
+driver.quit()
+
+"""
