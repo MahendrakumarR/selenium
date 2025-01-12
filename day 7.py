@@ -192,3 +192,243 @@ driver.save_screenshot("perumbakkam_address_screenshot.png")
 driver.quit()
 
 xxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 5
+----------
+URL : http://greenstech.in/selenium-course-content.html
+
+NOTE: ScrollDown till "job opening" and Take the screenshot and  scroll up Online Classroom
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Set up the WebDriver (assuming you're using Chrome)
+driver = webdriver.Chrome()
+
+try:
+    # Step 1: Navigate to the URL
+    driver.get("http://greenstech.in/selenium-course-content.html")
+    driver.maximize_window()
+    time.sleep(2)  # Wait for the page to load
+    
+    # Step 2: Scroll down to "Job Opening"
+    job_opening_element = driver.find_element(By.XPATH, "//h2[text()='Job Opening']")
+    actions = ActionChains(driver)
+    actions.move_to_element(job_opening_element).perform()
+    time.sleep(2)  # Allow time for scrolling
+    
+    # Step 3: Take a screenshot
+    driver.save_screenshot("job_opening_section.png")
+    print("Screenshot of 'Job Opening' section saved.")
+    
+    # Step 4: Scroll back up to "Online Classroom"
+    online_classroom_element = driver.find_element(By.XPATH, "//h2[text()='Online Classroom']")
+    actions.move_to_element(online_classroom_element).perform()
+    time.sleep(2)  # Allow time for scrolling
+    
+    print("Scrolled back up to 'Online Classroom' section.")
+finally:
+    # Close the browser
+    driver.quit()
+xxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 6
+----------
+URL : http://greenstech.in/selenium-course-content.html
+
+NOTE: Scrolldown till "Top Selenium Trends In 2020" and takes Screenshot 
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Set up the WebDriver (assuming you're using Chrome)
+driver = webdriver.Chrome()
+
+try:
+    # Step 1: Navigate to the URL
+    driver.get("http://greenstech.in/selenium-course-content.html")
+    driver.maximize_window()
+    time.sleep(2)  # Wait for the page to load
+    
+    # Step 2: Scroll down to "Top Selenium Trends In 2020"
+    trends_element = driver.find_element(By.XPATH, "//h2[text()='Top Selenium Trends In 2020']")
+    actions = ActionChains(driver)
+    actions.move_to_element(trends_element).perform()
+    time.sleep(2)  # Allow time for scrolling
+    
+    # Step 3: Take a screenshot
+    driver.save_screenshot("selenium_trends_2020.png")
+    print("Screenshot of 'Top Selenium Trends In 2020' section saved.")
+    
+finally:
+    # Close the browser
+    driver.quit()
+xxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 7
+----------
+URL : http://greenstech.in/selenium-course-content.html
+
+NOTE: Click interviews question take the screenshot
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+# Set up the WebDriver (assuming you're using Chrome)
+driver = webdriver.Chrome()
+
+try:
+    # Step 1: Navigate to the URL
+    driver.get("http://greenstech.in/selenium-course-content.html")
+    driver.maximize_window()
+    time.sleep(2)  # Wait for the page to load
+
+    # Step 2: Click on "Interviews Question"
+    interviews_question_element = driver.find_element(By.XPATH, "//h2[contains(text(),'Interviews Questions')]")
+    interviews_question_element.click()
+    time.sleep(2)  # Wait for the content to load
+
+    # Step 3: Take a screenshot
+    driver.save_screenshot("interviews_question_section.png")
+    print("Screenshot of 'Interviews Question' section saved.")
+
+finally:
+    # Close the browser
+    driver.quit()
+xxxxxxxxxxxxxxxxxxxxxxxx"""
+"""
+QUESTION 8
+----------
+URL : http://greenstech.in/selenium-course-content.html
+
+NOTE: In  CoreJava TestPaper Take the Screenshot 
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Set up the WebDriver (assuming you're using Chrome)
+driver = webdriver.Chrome()
+
+try:
+    # Step 1: Navigate to the URL
+    driver.get("http://greenstech.in/selenium-course-content.html")
+    driver.maximize_window()
+    time.sleep(2)  # Wait for the page to load
+
+    # Step 2: Scroll to and locate "Core Java Test Paper"
+    core_java_element = driver.find_element(By.XPATH, "//h2[contains(text(),'Core Java Test Paper')]")
+    actions = ActionChains(driver)
+    actions.move_to_element(core_java_element).perform()
+    time.sleep(2)  # Allow time for scrolling
+
+    # Step 3: Click "Core Java Test Paper" (if it's a toggle)
+    core_java_element.click()
+    time.sleep(2)  # Wait for the content to load after clicking
+
+    # Step 4: Take a screenshot
+    driver.save_screenshot("core_java_test_paper.png")
+    print("Screenshot of 'Core Java Test Paper' section saved.")
+
+finally:
+    # Close the browser
+    driver.quit()
+xxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION  9
+------------
+URL : https://www.flipkart.com/
+
+NOTE: Search iphone and take the screenshot.
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Set up the WebDriver (assuming you're using Chrome)
+driver = webdriver.Chrome()
+
+try:
+    # Step 1: Navigate to the Flipkart URL
+    driver.get("https://www.flipkart.com/")
+    driver.maximize_window()
+    time.sleep(3)  # Wait for the page to load
+
+    # Step 2: Close the login popup if it appears
+    try:
+        close_popup = driver.find_element(By.XPATH, "//button[contains(text(),'✕')]")
+        close_popup.click()
+        time.sleep(1)
+    except:
+        print("Login popup not displayed.")
+
+    # Step 3: Search for "iPhone"
+    search_bar = driver.find_element(By.NAME, "q")
+    search_bar.send_keys("iPhone")
+    search_bar.send_keys(Keys.RETURN)
+    time.sleep(3)  # Wait for the search results to load
+
+    # Step 4: Take a screenshot of the search results
+    driver.save_screenshot("flipkart_iphone_search.png")
+    print("Screenshot of iPhone search results saved.")
+
+finally:
+    # Close the browser
+    driver.quit()
+"""
+"""
+QUESTION 10
+-----------
+URL : https://www.amazon.in/
+
+NOTE: Search motorolo and   take the screenshot.
+
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Set up the WebDriver (assuming you're using Chrome)
+driver = webdriver.Chrome()
+
+try:
+    # Step 1: Navigate to the Amazon India URL
+    driver.get("https://www.amazon.in/")
+    driver.maximize_window()
+    time.sleep(3)  # Wait for the page to load
+
+    # Step 2: Locate the search bar and search for "Motorola"
+    search_bar = driver.find_element(By.ID, "twotabsearchtextbox")
+    search_bar.send_keys("Motorola")
+    search_bar.send_keys(Keys.RETURN)
+    time.sleep(3)  # Wait for the search results to load
+
+    # Step 3: Take a screenshot of the search results
+    driver.save_screenshot("amazon_motorola_search.png")
+    print("Screenshot of Motorola search results saved.")
+
+finally:
+    # Close the browser
+    driver.quit()
