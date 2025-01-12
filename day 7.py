@@ -405,6 +405,7 @@ URL : https://www.amazon.in/
 NOTE: Search motorolo and   take the screenshot.
 
 """
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -432,3 +433,135 @@ try:
 finally:
     # Close the browser
     driver.quit()
+xxxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+
+QUESTION 11
+-----------
+URL : https://www.flipkart.com/
+
+NOTE: Mouse Over Kids & Baby  and Take the screenshot
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Set up the WebDriver (assuming you're using Chrome)
+driver = webdriver.Chrome()
+
+try:
+    # Step 1: Navigate to the Flipkart URL
+    driver.get("https://www.flipkart.com/")
+    driver.maximize_window()
+    time.sleep(3)  # Wait for the page to load
+
+    # Step 2: Close the login popup if it appears
+    try:
+        close_popup = driver.find_element(By.XPATH, "//button[contains(text(),'✕')]")
+        close_popup.click()
+        time.sleep(1)
+    except:
+        print("Login popup not displayed.")
+
+    # Step 3: Locate "Kids & Baby" and hover over it
+    kids_baby_element = driver.find_element(By.XPATH, "//span[text()='Kids & Baby']")
+    actions = ActionChains(driver)
+    actions.move_to_element(kids_baby_element).perform()
+    time.sleep(2)  # Allow time for the hover effect to appear
+
+    # Step 4: Take a screenshot
+    driver.save_screenshot("flipkart_kids_baby_hover.png")
+    print("Screenshot of 'Kids & Baby' menu hover saved.")
+
+finally:
+    # Close the browser
+    driver.quit()
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 12
+-----------
+URL : https://www.snapdeal.com/
+
+NOTE: search HP laptop and take the screenshot .
+
+"""
+"""
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Set up the WebDriver (assuming you're using Chrome)
+driver = webdriver.Chrome()
+
+try:
+    # Step 1: Navigate to the Snapdeal URL
+    driver.get("https://www.snapdeal.com/")
+    driver.maximize_window()
+    time.sleep(3)  # Wait for the page to load
+
+    # Step 2: Locate the search bar and search for "HP Laptop"
+    search_bar = driver.find_element(By.ID, "inputValEnter")
+    search_bar.send_keys("HP Laptop")
+    search_bar.send_keys(Keys.RETURN)
+    time.sleep(3)  # Wait for the search results to load
+
+    # Step 3: Take a screenshot of the search results
+    driver.save_screenshot("snapdeal_hp_laptop_search.png")
+    print("Screenshot of HP Laptop search results saved.")
+
+finally:
+    # Close the browser
+    driver.quit()
+"""
+"""
+QUESTION 13
+------------
+URL : https://www.flipkart.com/
+
+NOTE: Mouse Over Womens and take the screenshot.
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+# Set up the WebDriver (assuming you're using Chrome)
+driver = webdriver.Chrome()
+
+try:
+    # Step 1: Navigate to the Flipkart URL
+    driver.get("https://www.flipkart.com/")
+    driver.maximize_window()
+    time.sleep(3)  # Wait for the page to load
+
+    # Step 2: Close the login popup if it appears
+    try:
+        close_popup = driver.find_element(By.XPATH, "//button[contains(text(),'✕')]")
+        close_popup.click()
+        time.sleep(1)
+    except:
+        print("Login popup not displayed.")
+
+    # Step 3: Locate "Women" and hover over it
+    women_element = driver.find_element(By.XPATH, "//span[text()='Women']")
+    actions = ActionChains(driver)
+    actions.move_to_element(women_element).perform()
+    time.sleep(2)  # Allow time for the hover effect to appear
+
+    # Step 4: Take a screenshot
+    driver.save_screenshot("flipkart_women_hover.png")
+    print("Screenshot of 'Women' menu hover saved.")
+
+finally:
+    # Close the browser
+    driver.quit()
+xxxxxxxxxxxxxxxxxxxxxxxxxx"""
