@@ -653,3 +653,41 @@ finally:
     # Close the browser
     driver.quit()
 xxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+"""
+QUESTION 13
+----------
+URL : http://greenstech.in/selenium-course-content.html
+
+NOTE: Click Testng in Framework Test Paper
+      print 4th  Question in practical
+
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+# Set up the WebDriver (use the path to your driver)
+driver = webdriver.Chrome()
+
+try:
+    # Open the URL
+    driver.get("http://greenstech.in/selenium-course-content.html")
+    driver.maximize_window()
+    time.sleep(2)  # Allow the page to load
+
+    # Click on "Testng" link under "Framework Test Paper"
+    testng_link = driver.find_element(By.LINK_TEXT, "Testng")
+    testng_link.click()
+    time.sleep(3)  # Wait for the page to load
+
+    # Find and print the 4th question under the "Practical" section
+    # Assuming the question is within a <p> tag or similar
+    question_4 = driver.find_element(By.XPATH, "//p[contains(text(),'4.')]")  # Example XPath
+    print("4th Question in Practical:", question_4.text)
+
+finally:
+    # Close the browser
+    driver.quit()
+xxxxxxxxxxxxxxxxxxxxxx"""
