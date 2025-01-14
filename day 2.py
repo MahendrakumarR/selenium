@@ -65,21 +65,24 @@ URL : https://www.facebook.com/
 NOTE: Enter Email or Phone and Password.
 
 """
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
-# driver = webdriver.Firefox()
+driver = webdriver.Firefox()
 
-# driver.get("https://www.facebook.com/")
+driver.get("https://www.facebook.com/")
 
-# username = driver.find_element(By.ID,"email")
-# username.send_keys("mahendran@gmail.com")
+username = driver.find_element(By.ID,"email")
+username.send_keys("mahendran@gmail.com")
 
-# password = driver.find_element(By.ID,"pass")
-# password.send_keys(123456)
+password = driver.find_element(By.ID,"pass")
+password.send_keys(123456)
 
-# btn = driver.find_element(By.NAME,"login")
-# btn.click()
+btn = driver.find_element(By.NAME,"login")
+btn.click()
+
+"""
 
 """
 QUESTION 2
@@ -89,21 +92,23 @@ URL : https://www.redbus.in/
 NOTE: Enter from and to textbox.
 
 """
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.common.keys import Keys
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
-# driver = webdriver.Firefox()
+driver = webdriver.Firefox()
 
-# driver.get("https://www.redbus.in/ ")
+driver.get("https://www.redbus.in/ ")
 
-# from_= driver.find_element(By.ID,"src")
-# from_.send_keys("Erode")
-# from_.send_keys(Keys.ENTER)
+from_= driver.find_element(By.ID,"src")
+from_.send_keys("Erode")
+from_.send_keys(Keys.ENTER)
 
-# to_= driver.find_element(By.ID,"dest")
-# to_.send_keys("Chennai")
+to_= driver.find_element(By.ID,"dest")
+to_.send_keys("Chennai")
 
+"""
 """
 QUESTION 3
 ----------
@@ -112,18 +117,20 @@ URL : https://www.google.com/
 NOTE: Enter GreensTechnology. 
 
 """
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.common.keys import Keys
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
-# driver = webdriver.Firefox()
+driver = webdriver.Firefox()
 
-# driver.get("https://www.google.com/")
+driver.get("https://www.google.com/")
 
-# search = driver.find_element(By.ID,"APjFqb")
-# search.send_keys("Greens Technology")
-# search.send_keys(Keys.ENTER) 
+search = driver.find_element(By.ID,"APjFqb")
+search.send_keys("Greens Technology")
+search.send_keys(Keys.ENTER) 
 
+"""
 """
 QUESTION 4
 ----------
@@ -132,22 +139,24 @@ URL : https://infinity.icicibank.com/corp/Login.jsp
 NOTE: Enter username and password. 
 
 """
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
-# driver = webdriver.Firefox()
+driver = webdriver.Firefox()
 
-# driver.get("https://infinity.icicibank.com/corp/Login.jsp")
+driver.get("https://infinity.icicibank.com/corp/Login.jsp")
 
-# user = driver.find_element(By.NAME,"DUMMY1")
-# user.send_keys("Mahendran")
+user = driver.find_element(By.NAME,"DUMMY1")
+user.send_keys("Mahendran")
 
-# driver.find_element(By.ID,"user-id-goahead").click()
+driver.find_element(By.ID,"user-id-goahead").click()
 
-# driver.find_element(By.ID,"AuthenticationFG.USER_PRINCIPAL").send_keys("Mahendran")
+driver.find_element(By.ID,"AuthenticationFG.USER_PRINCIPAL").send_keys("Mahendran")
 
-# driver.find_element(By.ID,"AuthenticationFG.ACCESS_CODE").send_keys("009876")
+driver.find_element(By.ID,"AuthenticationFG.ACCESS_CODE").send_keys("009876")
 
+"""
 
 """
 QUESTION 5
@@ -157,16 +166,16 @@ URL : https://netbanking.hdfcbank.com/
 NOTE: Enter customer id .
 
 """
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
-# import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
 
 
-# driver = webdriver.Firefox()
+driver = webdriver.Firefox()
 
-# driver.get("https://netbanking.hdfcbank.com/")
+driver.get("https://netbanking.hdfcbank.com/")
 
-# time.sleep(10)
+time.sleep(10)
 
 """
 QUESTION 6
