@@ -166,6 +166,7 @@ URL : https://netbanking.hdfcbank.com/
 NOTE: Enter customer id .
 
 """
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -176,11 +177,16 @@ driver = webdriver.Firefox()
 
 driver.get("https://netbanking.hdfcbank.com/")
 
-id = webdriver.find_emelent(By.NAME,"fldLoginUserId")
-id.send_keys(987654)
+driver.switch_to.frame('login_page')            # here lot of frames using so which frame inside id store to find 
+
+id = driver.find_element(By.NAME,"fldLoginUserId")
+id.send_keys("987654")
+
+# driver.switch_to.default_content()
 
 time.sleep(10)
 
+"""
 """
 QUESTION 6
 ----------
@@ -190,17 +196,17 @@ NOTE: Enter the location.
 
 """
 
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
-# driver = webdriver.Firefox()
+driver = webdriver.Firefox()
 
-# driver.get("https://www.swiggy.com/")
+driver.get("https://www.swiggy.com/")
 
 # driver.find_element(By.XPATH,"//div[@role='button']").click()
-# l = driver.find_element(By.XPATH,"//input[@name='']")
-# l.send_keys("coimbatore")
-# l.click()
+l = driver.find_element(By.ID,"location")
+l.send_keys("coimbatore")
+l.click()
 
 """
 QUESTION 7
