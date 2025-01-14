@@ -168,12 +168,16 @@ NOTE: Enter customer id .
 """
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 import time
 
 
 driver = webdriver.Firefox()
 
 driver.get("https://netbanking.hdfcbank.com/")
+
+id = webdriver.find_emelentby(By.NAME,"fldLoginUserId")
+id.send_keys(987654)
 
 time.sleep(10)
 
