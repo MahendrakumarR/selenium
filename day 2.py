@@ -176,7 +176,7 @@ driver = webdriver.Firefox()
 
 driver.get("https://netbanking.hdfcbank.com/")
 
-id = webdriver.find_emelentby(By.NAME,"fldLoginUserId")
+id = webdriver.find_emelent(By.NAME,"fldLoginUserId")
 id.send_keys(987654)
 
 time.sleep(10)
