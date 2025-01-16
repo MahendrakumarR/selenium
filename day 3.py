@@ -58,7 +58,7 @@ URL : https://www.amazon.in/
 NOTE: Click start here. Enter iphone and search
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
@@ -71,10 +71,13 @@ time.sleep(2)
 
 
 search_box = driver.find_element(By.ID,"twotabsearchtextbox")
-search_box.send_keys("iPhone").click()
+search_box.send_keys("iPhone")
+search_box.click()
+
 time.sleep(2)
 
-"""
+
+
 """
 QUESTION 2
 -----------
@@ -84,7 +87,6 @@ NOTE: Enter email and password and click login(by using xpath locator).
 
 """
 """
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
@@ -105,8 +107,8 @@ time.sleep(2)
 
 button = driver.find_element(By.XPATH,"//button[@name='login']")
 button.click()
-
 """
+
 
 """
 QUESTION 3
