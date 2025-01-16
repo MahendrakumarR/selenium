@@ -195,7 +195,7 @@ URL : https://www.swiggy.com/
 NOTE: Enter the location.
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -209,6 +209,7 @@ l.send_keys("coimbatore")
 l.click()
 
 """
+"""
 QUESTION 7
 ----------
 URL :https://www.snapdeal.com/login
@@ -216,19 +217,20 @@ URL :https://www.snapdeal.com/login
 NOTE: Enter mobile number/email.
 
 """
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
-# driver = webdriver.Firefox()
+driver = webdriver.Firefox()
 
-# driver.get("https://www.snapdeal.com/login")
+driver.get("https://www.snapdeal.com/login")
 
-# d = driver.find_element(By.ID,"userName")
-# d.send_keys(9876543210)
+d = driver.find_element(By.ID,"userName")
+d.send_keys(9876543210)
 
-# btn = driver.find_element(By.ID,"checkUser")
-# btn.click()
-
+btn = driver.find_element(By.ID,"checkUser")
+btn.click()
+"""
 """
 QUESTION 8
 -----------
@@ -237,24 +239,24 @@ URL : https://www.instagram.com/accounts/login/?hl=en login page
 NOTE: Enter username and password.
 
 """
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
-# import time
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
 
-# driver = webdriver.Firefox()
+driver = webdriver.Firefox()
 
-# driver.get("https://www.instagram.com/accounts/login/?hl=en")
+driver.get("https://www.instagram.com/accounts/login/?hl=en")
 
-# time.sleep(10)
+time.sleep(10)
 
-# u = driver.find_element(By.XPATH,"//input[@name='username']")
-# u.send_keys("Mahendran")
+u = driver.find_element(By.XPATH,"//input[@name='username']")
+u.send_keys("Mahendran")
 
-# p = driver.find_element(By.XPATH,"//input[@name='password']")
-# p.send_keys("Mahe")
+p = driver.find_element(By.XPATH,"//input[@name='password']")
+p.send_keys("Mahe")
 
-
-
+"""
 
 """
 QUESTION 9
@@ -264,23 +266,49 @@ URL : http://demo.automationtesting.in/Register.html
 NOTE: Just enter the values for the textbox only.
 
 """
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
+"""
 
-# driver = webdriver.Firefox()
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 
-# driver.get("http://demo.automationtesting.in/Register.html")
+driver = webdriver.Firefox()
 
-# f_name = driver.find_element(By.XPATH,"//input[@placeholder='First Name']")
-# f_name.send_keys("Mahendra")
+driver.get("http://demo.automationtesting.in/Register.html")
 
-# driver.find_element(By.XPATH,"//input[@placeholder='Last Name']").send_keys("Kumar")
-# driver.find_element(By.XPATH,"//textarea[@ng-model='Adress']").send_keys("Erode, Tamilnadu")
-# driver.find_element(By.XPATH,"//input[@type='email']").send_keys("abcd@gmail.com")
-# driver.find_element(By.XPATH,"//input[@type='tel']").send_keys("9876543210")
-# driver.find_element(By.XPATH,"//input[@type='password']").send_keys(9876)
-# driver.find_element(By.XPATH,"//input[@ng-model='CPassword']").send_keys(9876)
+f_name = driver.find_element(By.XPATH,"//input[@placeholder='First Name']")
+f_name.send_keys("Mahendra")
 
+driver.find_element(By.XPATH,"//input[@placeholder='Last Name']").send_keys("Kumar")
+driver.find_element(By.XPATH,"//textarea[@ng-model='Adress']").send_keys("Erode, Tamilnadu")
+driver.find_element(By.XPATH,"//input[@type='email']").send_keys("abcd@gmail.com")
+driver.find_element(By.XPATH,"//input[@type='tel']").send_keys("9876543210")
+driver.find_element(By.NAME,"radiooptions").click()
+driver.find_element(By.ID,"checkbox1").click()
+
+
+dropdown = driver.find_element(By.ID,"Skills")
+select = Select(dropdown)
+select.select_by_visible_text("Adobe Photoshop")
+
+dropdown_4 = driver.find_element(By.ID,"yearbox")
+select_2 = Select(dropdown_4)
+select_2.select_by_visible_text("1919")
+
+dropdown_5 = driver.find_element(By.XPATH,"//select[@placeholder='Month']")
+select_3 = Select(dropdown_5)
+select_3.select_by_visible_text("March")
+
+dropdown_6 = driver.find_element(By.ID,"daybox")
+select_4 = Select(dropdown_6)
+select_4.select_by_visible_text("5")
+
+driver.find_element(By.XPATH,"//input[@type='password']").send_keys(9876)
+driver.find_element(By.XPATH,"//input[@ng-model='CPassword']").send_keys(9876)
+
+driver.find_element(By.ID,"submitbtn").click()
+
+"""
 
 """
 QUESTION 10
@@ -290,15 +318,20 @@ URL : http://adactinhotelapp.com/
 NOTE: Enter Email or Phone and Password.
 
 """
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
-# driver = webdriver.Firefox()
+driver = webdriver.Firefox()
 
-# driver.get("http://adactinhotelapp.com/")
+driver.get("http://adactinhotelapp.com/")
 
-# driver.find_element(By.ID,"username").send_keys("MahendraN")
-# driver.find_element(By.ID,"password").send_keys("Mahendra")
+driver.find_element(By.ID,"username").send_keys("MahendraN")
+driver.find_element(By.ID,"password").send_keys("Mahendra")
+
+"""
+
+# ===================== End =============================== #
 
 
 
