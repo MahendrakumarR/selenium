@@ -113,7 +113,6 @@ button.click()
 
 """
 
-
 """
 QUESTION 3
 -----------
@@ -123,91 +122,48 @@ NOTE: Give details and register the form.
 
 """
 """
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import time
 
 driver = webdriver.Firefox()
 
 driver.get("http://demo.automationtesting.in/Register.html")
 
-time.sleep(3)
-
 f_name = driver.find_element(By.XPATH,"//input[@placeholder='First Name']")
-f_name.send_keys("MahendraN")
+f_name.send_keys("Mahendra")
 
-l_name = driver.find_element(By.XPATH,"//input[@placeholder='Last Name']")
-l_name.send_keys("R")
+driver.find_element(By.XPATH,"//input[@placeholder='Last Name']").send_keys("Kumar")
+driver.find_element(By.XPATH,"//textarea[@ng-model='Adress']").send_keys("Erode, Tamilnadu")
+driver.find_element(By.XPATH,"//input[@type='email']").send_keys("abcd@gmail.com")
+driver.find_element(By.XPATH,"//input[@type='tel']").send_keys("9876543210")
+driver.find_element(By.NAME,"radiooptions").click()
+driver.find_element(By.ID,"checkbox1").click()
 
-a_name = driver.find_element(By.XPATH,"//textarea[@ng-model='Adress']")
-a_name.send_keys("Erode")
+dropdown = driver.find_element(By.ID,"Skills")
+select = Select(dropdown)
+select.select_by_visible_text("Adobe Photoshop")
 
-e_name = driver.find_element(By.XPATH,"//input[@type='email']")
-e_name.send_keys("ahendra@gmail.com")
+dropdown_4 = driver.find_element(By.ID,"yearbox")
+select_2 = Select(dropdown_4)
+select_2.select_by_visible_text("1919")
 
-t_name = driver.find_element(By.XPATH,"//input[@type='tel']")
-t_name.send_keys("0987654321")
+dropdown_5 = driver.find_element(By.XPATH,"//select[@placeholder='Month']")
+select_3 = Select(dropdown_5)
+select_3.select_by_visible_text("March")
 
-g_name = driver.find_element(By.XPATH,"//input[@value='Male']")
-g_name.click()
+dropdown_6 = driver.find_element(By.ID,"daybox")
+select_4 = Select(dropdown_6)
+select_4.select_by_visible_text("5")
 
-c_name = driver.find_element(By.XPATH,"//input[@value='Cricket']")
-c_name.click()
+driver.find_element(By.XPATH,"//input[@type='password']").send_keys(9876)
+driver.find_element(By.XPATH,"//input[@ng-model='CPassword']").send_keys(9876)
 
-m_name = driver.find_element(By.XPATH,"//input[@value='Movies']")
-m_name.click()
+driver.find_element(By.ID,"submitbtn").click()
 
-la_name = driver.find_element(By.ID,"msdd")
-la_name.click()
+"""
 
-wait = WebDriverWait(driver, 10)
-wait.until(EC.presence_of_all_elements_located((By.XPATH, "//ul[contains(@class,'ui-autocomplete')]/li/a")))
-
-languages = driver.find_elements(By.XPATH, "//ul[contains(@class,'ui-autocomplete')]/li/a")
-for language in languages:
-    if language.text == "English":
-        language.click()
-        break 
-
-time.sleep(2)
-
-driver.find_element(By.XPATH, "//label[text()='Languages']").click()
-
-s_name = Select(driver.find_element(By.ID,"Skill"))
-s_name.select_by_visible_text('APIS')
-
-
-c_name = Select(driver.find_element(By.ID,"countries"))
-c_name.select_by_visible_text("india")
-
-
-y_name = Select(driver.find_element(By.XPATH,"//input[@placeholder='Year']"))
-y_name.select_by_value("2000") 
-
-m_name = Select(driver.find_element(By.XPATH,"//input[@placeholder='Month']"))
-m_name.select_by_visible_text("May")
-
-d_name = Select(driver.find_element(By.XPATH,"//input[@placeholder='Day']"))
-d_name.select_by_value("10")
-
-p_name = driver.find_element(By.ID,"firstpassword")
-p_name.send_keys("MahendraN")
-
-cp_name = driver.find_element(By.ID,"secondpassword")
-cp_name.send_keys("MahendraN")
-
-time.sleep(3)
-
-btn = driver.find_element(By.ID,"submitbtn")
-btn.click()
-
-time.sleep(3)
-
-""" """===== Not Completed """
 """
 
 QUESTION 4
@@ -217,7 +173,7 @@ URL : http://demoqa.com/automation-practice-form/
 NOTE: Give details and register the form
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
@@ -267,7 +223,6 @@ driver.find_element(By.ID,"submit").click()
 
 time.sleep(5)
 
-""" """===== Not Completed """
 
 """
 QUESTION 5
