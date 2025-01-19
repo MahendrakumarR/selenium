@@ -173,9 +173,10 @@ URL : http://demoqa.com/automation-practice-form/
 NOTE: Give details and register the form
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 import time
 
@@ -199,15 +200,15 @@ Select(driver.find_element(By.CLASS_NAME,"react-datepicker__month-select")).sele
 # driver.find_element(By.XPATH,"//div[text()='15']").click()
 driver.find_element(By.XPATH, "//div[contains(@class, 'react-datepicker__day') and text()='15' and not(contains(@class, 'outside-month'))]").click()
 
-driver.find_element(By.ID,"subjectsInput").send_keys("Maths")
+sub = driver.find_element(By.ID,"subjectsInput").send_keys("Maths")
 time.sleep(1)
-driver.find_element(By.ID,"subjectsInput").send_keys('\n')
+sub.send_keys(Keys.ENTER)
  
 driver.find_element(By.XPATH,"//label[text()='Sports']").click()
 driver.find_element(By.XPATH,"//label[text()='Music']").click()
 
 upload_element = driver.find_element(By.ID,"uploadPicture")
-upload_element.send_keys("C:/Users/Administrator/Downloads/qwert.JPEG")
+upload_element.send_keys(r"C:\Users\ Administrator\Downloads\qwert.JPEG")
 
 driver.find_element(By.ID,"currentAddress").send_keys("123, jhon street, chennai,chennai 001")
 
@@ -223,7 +224,7 @@ driver.find_element(By.ID,"submit").click()
 
 time.sleep(5)
 
-
+"""
 """
 QUESTION 5
 ----------
