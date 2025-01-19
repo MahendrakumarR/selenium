@@ -202,7 +202,7 @@ driver.find_element(By.XPATH, "//div[contains(@class, 'react-datepicker__day') a
 driver.find_element(By.ID,"subjectsInput").send_keys("Maths")
 time.sleep(1)
 driver.find_element(By.ID,"subjectsInput").send_keys('\n')
-
+ 
 driver.find_element(By.XPATH,"//label[text()='Sports']").click()
 driver.find_element(By.XPATH,"//label[text()='Music']").click()
 
