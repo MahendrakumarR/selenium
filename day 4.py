@@ -62,7 +62,7 @@ URL : http://www.greenstechnologys.com
 NOTE: Print Greens Technologys Software Training Centers in Chennai
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -81,7 +81,7 @@ for center in centers:
 
 # Close the WebDriver
 driver.quit()
-xxxxxxxxxxxxxxxxxxxxxx"""
+
 
 """
 QUESTION 2
