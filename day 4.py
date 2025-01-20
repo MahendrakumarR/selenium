@@ -92,6 +92,7 @@ URL : http://greenstech.in/selenium-course-content.html
 NOTE: Print paragaraph starts with vel murugan.
 
 """
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -128,8 +129,7 @@ finally:
     driver.switch_to.default_content()
     driver.quit()
 
-
-
+"""
 
 """
 QUESTION 3
@@ -139,7 +139,7 @@ URL : http://greenstech.in/selenium-course-content.html
 NOTE: Print the adayar branch address
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
@@ -161,7 +161,7 @@ except Exception as e:
 # Close the WebDriver
 driver.quit()
 
-xxxxxxxxxxxxxxxxxxxxxxxx"""
+
 
 """
 QUESTION 4
