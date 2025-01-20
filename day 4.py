@@ -92,26 +92,42 @@ URL : http://greenstech.in/selenium-course-content.html
 NOTE: Print paragaraph starts with vel murugan.
 
 """
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
-# Initialize the WebDriver
+# Initialize WebDriver
 driver = webdriver.Chrome()
 
 # Open the URL
 driver.get("http://greenstech.in/selenium-course-content.html")
 
-# Locate the paragraph starting with "Vel Murugan"
-driver.find_element(By.ID,"home-tab").click()
+try:
+    # Locate and switch to the iframe
+    iframe = driver.find_element(By.TAG_NAME, "iframe")
+    driver.switch_to.frame(iframe)
+    print("Switched to iframe successfully.")
 
-paragraph = driver.find_element(By.TAG_NAME, "//p[starts-with(text(), 'Vel Murugan')]").text
+    # Debug: Print all paragraphs inside the iframe
+    paragraphs = driver.find_elements(By.TAG_NAME, "p")
+    for index, paragraph in enumerate(paragraphs):
+        print(f"Paragraph {index}: {paragraph.text}")
 
-# Print the paragraph
-print(paragraph)
+    # Wait for the desired paragraph
+    paragraph = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, "//p[contains(text(), 'Vel Murugan')]"))
+    ).text
+    print("Found paragraph:", paragraph)
 
-# Close the WebDriver
-driver.quit() 
+except Exception as e:
+    print(f"Error: {e}")
+
+finally:
+    # Switch back to the main content and close WebDriver
+    driver.switch_to.default_content()
+    driver.quit()
+
 
 
 
