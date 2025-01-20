@@ -111,7 +111,7 @@ paragraph = driver.find_element(By.TAG_NAME, "//p[starts-with(text(), 'Vel Murug
 print(paragraph)
 
 # Close the WebDriver
-driver.quit()
+driver.quit() 
 
 
 
