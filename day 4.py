@@ -62,7 +62,7 @@ URL : http://www.greenstechnologys.com
 NOTE: Print Greens Technologys Software Training Centers in Chennai
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -82,6 +82,7 @@ for center in centers:
 # Close the WebDriver
 driver.quit()
 
+xxxxxxxxxxxxxxxxxxxxx"""
 
 """
 QUESTION 2
@@ -91,7 +92,7 @@ URL : http://greenstech.in/selenium-course-content.html
 NOTE: Print paragaraph starts with vel murugan.
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -102,7 +103,9 @@ driver = webdriver.Chrome()
 driver.get("http://greenstech.in/selenium-course-content.html")
 
 # Locate the paragraph starting with "Vel Murugan"
-paragraph = driver.find_element(By.XPATH, "//p[starts-with(text(), 'Vel Murugan')]").text
+driver.find_element(By.ID,"home-tab").click()
+
+paragraph = driver.find_element(By.TAG_NAME, "//p[starts-with(text(), 'Vel Murugan')]").text
 
 # Print the paragraph
 print(paragraph)
@@ -110,7 +113,7 @@ print(paragraph)
 # Close the WebDriver
 driver.quit()
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
 
 """
 QUESTION 3
