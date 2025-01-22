@@ -144,22 +144,26 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
-# Initialize the WebDriver
 driver = webdriver.Chrome()
-
-# Open the URL
 driver.get("http://greenstech.in/selenium-course-content.html")
 
-time.sleep(10)
-# Locate the Adyar branch address
-try:
-    address = driver.find_element(By.XPATH, "//p[contains(text(), 'Adyar')]").text
-    print("Adyar Branch Address:", address)
-except Exception as e:
-    print("Error locating the Adyar branch address:", e)
+adyar = driver.find_element(By.XPATH,"//span[contains(text(),'Adyar')]")
+no = driver.find_element(By.XPATH,"//span[contains(text(),'No:11,')]")
+street = driver.find_element(By.XPATH,"//span[contains(text(),'First Street,')]")
+nagar = driver.find_element(By.XPATH,"//span[contains(text(),'padmanabha Nagar,')]")
+ad = driver.find_element(By.XPATH,"//span[contains(text(),'Adyar,')]")
+chennai = driver.find_element(By.XPATH,"//span[contains(text(),'Chennai-600 020.')]")
+ph = driver.find_element(By.XPATH,"//a[contains(text(),'+91 8939975577')]")
+mail = driver.find_element(By.XPATH,"//a[contains(text(),'contact@greenstechnologys.com')]")
 
-# Close the WebDriver
-driver.quit()
+print(adyar.text)
+print(no.text)
+print(street.text)
+print(nagar.text)
+print(ad.text)
+print(chennai.text)
+print(ph.text)
+print(mail.text)
 
 
 
