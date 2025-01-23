@@ -153,7 +153,7 @@ street = driver.find_element(By.XPATH,"//span[contains(text(),'First Street,')]"
 nagar = driver.find_element(By.XPATH,"//span[contains(text(),'padmanabha Nagar,')]")
 ad = driver.find_element(By.XPATH,"//span[contains(text(),'Adyar,')]")
 chennai = driver.find_element(By.XPATH,"//span[contains(text(),'Chennai-600 020.')]")
-ph = driver.find_element(By.XPATH,"//a[contains(text(),'+91 8939975577')]")  
+ph = driver.find_element(By.XPATH,"//a[@title='8939975577']")
 mail = driver.find_element(By.XPATH,"//a[contains(text(),'contact@greenstechnologys.com')]")
 
 print(adyar.text)
@@ -162,7 +162,7 @@ print(street.text)
 print(nagar.text)
 print(ad.text)
 print(chennai.text)
-print(ph.text)
+print("phone:",ph.text)
 print(mail.text)
 
 
