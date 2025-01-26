@@ -139,7 +139,7 @@ URL : http://greenstech.in/selenium-course-content.html
 NOTE: Print the adayar branch address
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
@@ -164,7 +164,7 @@ print(ad.text)
 print(chennai.text)
 print("phone:",ph.text)
 print(mail.text)
-
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"""
 
 
 """
@@ -259,17 +259,17 @@ password_field.send_keys("example_password123")
 email_value = email_field.get_attribute("value")
 password_value = password_field.get_attribute("value")
 
+
 print("Entered Email:", email_value)
 print("Entered Password:", password_value)
 
 # Close the WebDriver
 driver.quit()
-
 """
 """
 QUESTION 7
 ----------
-URL : http://www.google.com/
+URL : https://www.google.com
 
 NOTE: Search greens velmurugan and click the 1st link.
 
@@ -279,12 +279,14 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
+from selenium.webdriver.firefox.options import Options
 
-# Initialize the WebDriver
-driver = webdriver.Chrome()
+options = Options()
+options.add_argument("--proxy-server=http://your-proxy-server:port")
+driver = webdriver.Firefox(options=options)
 
 # Open the Google URL
-driver.get("http://www.google.com/")
+driver.get("https://www.google.com")
 
 # Locate the search bar and enter the query
 search_box = driver.find_element(By.NAME, "q")
@@ -303,9 +305,9 @@ except Exception as e:
     print("Error clicking the first link:", e)
 
 # Close the WebDriver
-driver.quit()
 
 """
+
 """
 QUESTION  8
 ------------
@@ -383,8 +385,8 @@ except Exception as e:
 
 # Close the WebDriver
 driver.quit()
-
 """
+
 """
 QUESTION 10
 -----------
@@ -460,6 +462,7 @@ time.sleep(2)
 
 # Locate the username and password fields in the login popup
 try:
+    driver.find_element(By.TAG_NAME,'Login').click()
     # Enter the username
     username_field = driver.find_element(By.XPATH, "//input[@class='_2IX_2- VJZDxU']")
     username_field.send_keys("test_user@gmail.com")
@@ -480,7 +483,7 @@ except Exception as e:
 # Close the WebDriver
 driver.quit()
 
-xxxxxxxxxxxxxxxxxxx"""
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"""
 
 """
 QUESTION 12
@@ -490,7 +493,7 @@ URL : https://www.shopclues.com/wholesale.html
 NOTE: Search any product and click 1st product
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -512,7 +515,7 @@ time.sleep(3)
 
 # Click the first product in the search results
 try:
-    first_product = driver.find_element(By.XPATH, "(//div[contains(@class, 'column')])[1]//a")  # XPath for the first product
+    first_product = driver.find_element(By.XPATH, "(//div[contains(@class, 'column')])[0]//a")  # XPath for the first product
     first_product.click()
     print("Successfully clicked the first product.")
 except Exception as e:
@@ -521,4 +524,3 @@ except Exception as e:
 # Close the WebDriver
 driver.quit()
 
-"""
