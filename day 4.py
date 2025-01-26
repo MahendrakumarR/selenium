@@ -493,7 +493,7 @@ URL : https://www.shopclues.com/wholesale.html
 NOTE: Search any product and click 1st product
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -515,7 +515,7 @@ time.sleep(3)
 
 # Click the first product in the search results
 try:
-    first_product = driver.find_element(By.XPATH, "(//div[contains(@class, 'column')])[0]//a")  # XPath for the first product
+    first_product = driver.find_element(By.XPATH, "(//div[contains(@class, 'column')])[1]//a")  # XPath for the first product
     first_product.click()
     print("Successfully clicked the first product.")
 except Exception as e:
@@ -524,3 +524,4 @@ except Exception as e:
 # Close the WebDriver
 driver.quit()
 
+"""
