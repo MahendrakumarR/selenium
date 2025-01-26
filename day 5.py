@@ -65,7 +65,7 @@ NOTE: Drag and drop  bank  in Account ,5000 in amount  at debited side
       Drag and drop  sales in Account ,5000 in amount  at credited side 
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
@@ -115,7 +115,7 @@ except Exception as e:
 # Close the WebDriver
 driver.quit()
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
 
 """
 QUESTION 2
