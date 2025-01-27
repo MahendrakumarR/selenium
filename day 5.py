@@ -66,6 +66,7 @@ NOTE: Drag and drop  bank  in Account ,5000 in amount  at debited side
 
 """
 
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
@@ -86,36 +87,42 @@ actions = ActionChains(driver)
 # Locate the source and target elements
 try:
     # Drag 'BANK' to 'Account' (Debited Side)
+    
     bank = driver.find_element(By.XPATH, "//a[contains(text(),'BANK')]")
     debit_account = driver.find_element(By.XPATH, "//ol[@id='bank']/li")
     actions.drag_and_drop(bank, debit_account).perform()
+
     print("Dragged 'BANK' to 'Account' at the debited side.")
 
+    
+
     # Drag '5000' to 'Amount' (Debited Side)
-    amount_5000_debit = driver.find_element(By.XPATH, "//a[contains(text(),'5000') and @class='placeholder']")
-    debit_amount = driver.find_element(By.XPATH, "//ol[@id='amt7']/li")
-    actions.drag_and_drop(amount_5000_debit, debit_amount).perform()
+    amount_debit = driver.find_element(By.XPATH, "//li[@id='fourth']/a")
+    debit_amount = driver.find_element(By.XPATH, "//ol[@id='amt7']/li") 
+    actions.drag_and_drop(amount_debit, debit_amount).perform()
     print("Dragged '5000' to 'Amount' at the debited side.")
 
+    
     # Drag 'SALES' to 'Account' (Credited Side)
-    sales = driver.find_element(By.XPATH, "//a[contains(text(),'SALES')]")
+    sales = driver.find_element(By.XPATH, "//li[@id='credit1']/a")
     credit_account = driver.find_element(By.XPATH, "//ol[@id='loan']/li")
     actions.drag_and_drop(sales, credit_account).perform()
     print("Dragged 'SALES' to 'Account' at the credited side.")
 
     # Drag '5000' to 'Amount' (Credited Side)
-    amount_5000_credit = driver.find_element(By.XPATH, "//a[contains(text(),'5000') and @class='placeholder']")
+    amount_5000_credit = driver.find_element(By.XPATH, "//li[@id='fourth']/a")
     credit_amount = driver.find_element(By.XPATH, "//ol[@id='amt8']/li")
     actions.drag_and_drop(amount_5000_credit, credit_amount).perform()
     print("Dragged '5000' to 'Amount' at the credited side.")
-
+    
+    
 except Exception as e:
     print("Error during drag and drop:", e)
 
 # Close the WebDriver
 driver.quit()
 
-
+"""
 
 """
 QUESTION 2
@@ -127,7 +134,7 @@ NOTE: Try Prime first mouseover
 
 """
 
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
@@ -170,7 +177,7 @@ except Exception as e:
 # Close the WebDriver
 driver.quit()
 
-xxxxxxxxxxxxxxxx"""
+
 
 """
 QUESTION 3
