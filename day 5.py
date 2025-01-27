@@ -133,7 +133,7 @@ NOTE: Try Prime first mouseover
       Click Free fast delievery on prime items
 
 """
-
+"""
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -177,7 +177,7 @@ except Exception as e:
 # Close the WebDriver
 driver.quit()
 
-
+xxxxxxxxxxxxxxxxxxxxxxxxx"""
 
 """
 QUESTION 3
@@ -210,18 +210,19 @@ time.sleep(2)
 actions = ActionChains(driver)
 
 try:
-    # Locate the "Home & Furniture" menu
-    home_furniture = driver.find_element(By.XPATH, "//div[text()='Home & Furniture']")
-    
+# Locate the "Home & Furniture" menu
+    home_furniture = driver.find_element(By.XPATH, "//span[text()='Home & Furniture']")
+
     # Perform mouse-over on "Home & Furniture"
     actions.move_to_element(home_furniture).perform()
     print("Mouse-over on 'Home & Furniture' completed.")
-    
+
+
     # Wait for the dropdown to appear
     time.sleep(2)
     
     # Locate and click "Bath Towels" in the dropdown
-    bath_towels = driver.find_element(By.XPATH, "//a[contains(text(), 'Bath Towels')]")
+    bath_towels = driver.find_element(By.XPATH, "//a[contains(text(), 'Cleaning & Bath')]")
     bath_towels.click()
     print("Clicked 'Bath Towels' successfully.")
     
@@ -229,15 +230,17 @@ try:
     time.sleep(3)
     
     # Get the name of the first product displayed
-    product_name = driver.find_element(By.XPATH, "(//a[@class='_1fQZEK'])[1]").text
-    print("First product name in 'Bath Towels' category:", product_name)
+    product_name = driver.find_element(By.XPATH, "//a[text()='Mops']")
+    product_name.click()
+    print("First product name in 'Bath Towels' category:")
 
 except Exception as e:
     print("Error:", e)
 
 # Close the WebDriver
 driver.quit()
-xxxxxxxxxxxxxxxxxxxx"""
+
+xxxx Last line name not get """
 
 """
 QUESTION 4
@@ -248,7 +251,7 @@ NOTE: Mobile and electronics is first mouseover
       Click Smart Phones range Rs5001 - Rs10000
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
@@ -286,7 +289,6 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-xxxxxxxxxxxxxxxxxxxxxxx"""
 
 """
 QUESTION 5
