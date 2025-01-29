@@ -251,7 +251,7 @@ NOTE: Mobile and electronics is first mouseover
       Click Smart Phones range Rs5001 - Rs10000
 
 """
-
+ 
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
