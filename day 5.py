@@ -266,7 +266,7 @@ driver.get(url)
 # Maximize the window
 driver.maximize_window()
 
-# Add a short delay to allow the page to load
+# Add a short delay to allow the page to load 
 time.sleep(3)
 
 # Locate the "Mobile and Electronics" menu
