@@ -251,13 +251,13 @@ NOTE: Mobile and electronics is first mouseover
       Click Smart Phones range Rs5001 - Rs10000
 
 """
- 
+"""
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Initialize the driver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the ShopClues website
 url = "https://www.shopclues.com/wholesale.html"
@@ -289,7 +289,7 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-
+xxxxxxxxxxxxx"""
 """
 QUESTION 5
 ----------
@@ -299,13 +299,13 @@ NOTE: Sports&more  is first mouseover
       Click weights grainers 
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Initialize the driver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the ShopClues website
 url = "https://www.shopclues.com/wholesale.html"
@@ -337,7 +337,7 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-xxxxxxxxxxxxxxxxxxxxxxxxx"""
+
 
 """
 QUESTION 6 
