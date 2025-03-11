@@ -408,12 +408,13 @@ NOTE: Courses is first mouseover
       Click Oracle sql training
 
 """
+"""
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Initialize the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the specified URL
 url = "http://greenstech.in/selenium-course-content.html"
@@ -436,7 +437,7 @@ action.move_to_element(courses_menu).perform()
 time.sleep(2)
 
 # Locate the "Oracle Training" submenu
-oracle_training = driver.find_element("xpath", "//span[text()='Oracle Training']")
+oracle_training = driver.find_element("xpath", "//span[text()='Oracle (48)']")
 
 # Perform mouseover on the "Oracle Training" submenu
 action.move_to_element(oracle_training).perform()
@@ -445,7 +446,7 @@ action.move_to_element(oracle_training).perform()
 time.sleep(2)
 
 # Locate and click the "Oracle SQL Training" link
-oracle_sql_training = driver.find_element("xpath", "//span[text()='Oracle SQL Training']")
+oracle_sql_training = driver.find_element("xpath", "//span[text()='Oracle SQL and PLSQL Placement Certification Training']")
 oracle_sql_training.click()
 
 # Add a short delay to observe the result
@@ -454,6 +455,7 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
+"""
 
 """
 
@@ -466,13 +468,13 @@ NOTE: Courses  is first mouseover
       click microstategy training.
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Initialize the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the specified URL
 url = "http://greenstech.in/selenium-course-content.html"
@@ -495,7 +497,7 @@ action.move_to_element(courses_menu).perform()
 time.sleep(2)
 
 # Locate the "Data Warehouse Training" submenu
-data_warehouse_training = driver.find_element("xpath", "//span[text()='Data Warehousing Training']")
+data_warehouse_training = driver.find_element("xpath", "//span[text()='Data Warehousing (5)']")
 
 # Perform mouseover on the "Data Warehouse Training" submenu
 action.move_to_element(data_warehouse_training).perform()
@@ -504,7 +506,7 @@ action.move_to_element(data_warehouse_training).perform()
 time.sleep(2)
 
 # Locate and click the "MicroStrategy Training" link
-microstrategy_training = driver.find_element("xpath", "//span[text()='Microstrategy Training']")
+microstrategy_training = driver.find_element("xpath", "//span[text()='COGNOS TM1 Certification Training']")
 microstrategy_training.click()
 
 # Add a short delay to observe the result
@@ -513,7 +515,6 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-xxxxxxxxxxxxxxxx"""
 
 """
 QUESTION 9
