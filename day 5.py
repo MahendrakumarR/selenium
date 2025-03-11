@@ -299,7 +299,7 @@ NOTE: Sports&more  is first mouseover
       Click weights grainers 
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
@@ -337,7 +337,7 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-
+"""
 
 """
 QUESTION 6 
@@ -355,7 +355,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Initialize the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the specified URL
 url = "http://greenstech.in/selenium-course-content.html"
@@ -378,7 +378,7 @@ action.move_to_element(course_menu).perform()
 time.sleep(2)
 
 # Locate the "Software Testing Training" submenu
-software_testing_training = driver.find_element("xpath", "//span[text()='Software Testing Training']")
+software_testing_training = driver.find_element("xpath", "//span[text()='Software Testing (12)']")
 
 # Perform mouseover on the "Software Testing Training" submenu
 action.move_to_element(software_testing_training).perform()
@@ -387,7 +387,7 @@ action.move_to_element(software_testing_training).perform()
 time.sleep(2)
 
 # Locate and click the "Selenium Training" link
-selenium_training = driver.find_element("xpath", "//span[text()='Selenium Training']")
+selenium_training = driver.find_element("xpath", "//span[text()='Selenium Certification Training']")
 selenium_training.click()
 
 # Add a short delay to observe the result
@@ -396,7 +396,7 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-xxxxxxxxxxxxxxxxxxxxxxxx"""
+"""
 
 """
 QUESTION 7
@@ -407,7 +407,6 @@ NOTE: Courses is first mouseover
       Oracle training is second mouseover
       Click Oracle sql training
 
-"""
 """
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
@@ -455,7 +454,6 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-xxxxxxxxxxxxxxxxxxxxxxxxxx"""
 
 """
 
