@@ -468,7 +468,7 @@ NOTE: Courses  is first mouseover
       click microstategy training.
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
@@ -514,7 +514,7 @@ time.sleep(5)
 
 # Close the browser
 driver.quit()
-
+"""
 
 """
 QUESTION 9
@@ -525,7 +525,6 @@ NOTE: Courses  is first mouseover
       RPA is second mouseover
       Click Blue prism Certification training
 
-"""
 """
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
@@ -573,10 +572,9 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-xxxxxxxxxxxxxxxx"""
+
 
 """
-
 QUESTION 10
 -----------
 URL : http://greenstech.in/selenium-course-content.html
