@@ -531,7 +531,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Initialize the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the specified URL
 url = "http://greenstech.in/selenium-course-content.html"
