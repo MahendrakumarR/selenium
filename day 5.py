@@ -526,6 +526,7 @@ NOTE: Courses  is first mouseover
       Click Blue prism Certification training
 
 """
+"""
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
@@ -554,7 +555,7 @@ action.move_to_element(courses_menu).perform()
 time.sleep(2)
 
 # Locate the "RPA" submenu
-rpa_menu = driver.find_element("xpath", "//span[text()='RPA (Robotic Process Automation) Training']")
+rpa_menu = driver.find_element("xpath", "//span[text()='RPA (6)']")
 
 # Perform mouseover on the "RPA" submenu
 action.move_to_element(rpa_menu).perform()
@@ -571,8 +572,7 @@ time.sleep(5)
 
 # Close the browser
 driver.quit()
-
-
+"""
 
 """
 QUESTION 10
@@ -583,7 +583,7 @@ NOTE: Courses is first mouseover
       Data Warehousing is second mouseover
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
@@ -623,7 +623,7 @@ time.sleep(3)
 # Close the browser
 driver.quit()
 
-xxxxxxxxxxxxxxxxxxxx"""
+
 
 """
 QUESTION 11
