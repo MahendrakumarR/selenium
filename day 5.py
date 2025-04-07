@@ -583,13 +583,13 @@ NOTE: Courses is first mouseover
       Data Warehousing is second mouseover
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Initialize the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the specified URL
 url = "http://greenstech.in/selenium-course-content.html"
@@ -612,7 +612,7 @@ action.move_to_element(courses_menu).perform()
 time.sleep(2)
 
 # Locate the "Data Warehousing" submenu
-data_warehousing_menu = driver.find_element("xpath", "//span[text()='Data Warehousing Training']")
+data_warehousing_menu = driver.find_element("xpath", "//span[text()='Data Warehousing (5)']")
 
 # Perform mouseover on the "Data Warehousing" submenu
 action.move_to_element(data_warehousing_menu).perform()
@@ -623,7 +623,7 @@ time.sleep(3)
 # Close the browser
 driver.quit()
 
-
+"""
 
 """
 QUESTION 11
@@ -636,13 +636,13 @@ NOTE: Alldepartment  is first mouseover
       Click portable air conditioners.
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Initialize the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the specified URL
 url = "https://www.homedepot.com/"
@@ -655,7 +655,7 @@ driver.maximize_window()
 time.sleep(5)
 
 # Locate the "All Departments" menu
-all_departments = driver.find_element("xpath", "//a[@data-id='departmentsFlyout']")
+all_departments = driver.find_element("xpath", "//button[@aria-label='open drawer to view Shop All']")
 
 # Perform mouseover on "All Departments"
 action = ActionChains(driver)
@@ -692,7 +692,6 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-"""
 """
 
 QUESTION 12
