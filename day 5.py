@@ -636,9 +636,11 @@ NOTE: Alldepartment  is first mouseover
       Click portable air conditioners.
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
 import time
 
 # Initialize the WebDriver
@@ -648,11 +650,15 @@ driver = webdriver.Firefox()
 url = "https://www.homedepot.com/"
 driver.get(url)
 
+# block pop-ups
+options = Options()
+options.set_preference("dom.disable_open_during_load", True)
+driver = webdriver.Firefox(options=options)
+
 # Maximize the browser window
 driver.maximize_window()
 
-# Add a short delay to allow the page to load completely
-time.sleep(5)
+time.sleep(3)
 
 # Locate the "All Departments" menu
 all_departments = driver.find_element("xpath", "//button[@aria-label='open drawer to view Shop All']")
@@ -664,8 +670,12 @@ action.move_to_element(all_departments).perform()
 # Add a short delay to ensure the submenu loads
 time.sleep(2)
 
+depart = driver.find_element("xpath", "//span[text()='Shop By Department']")
+action.move_to_element(depart).perform()
+
+time.sleep(2)
 # Locate the "Heating & Cooling" submenu
-heating_and_cooling = driver.find_element("xpath", "//a[text()='Heating & Cooling']")
+heating_and_cooling = driver.find_element("xpath", "//span[text()='Heating, Cooling, & Air Quality']")
 
 # Perform mouseover on "Heating & Cooling"
 action.move_to_element(heating_and_cooling).perform()
@@ -674,7 +684,7 @@ action.move_to_element(heating_and_cooling).perform()
 time.sleep(2)
 
 # Locate the "Air Conditioners" submenu
-air_conditioners = driver.find_element("xpath", "//a[text()='Air Conditioners']")
+air_conditioners = driver.find_element("xpath", "//span[text()='Air Conditioners']")
 
 # Perform mouseover on "Air Conditioners"
 action.move_to_element(air_conditioners).perform()
@@ -683,7 +693,7 @@ action.move_to_element(air_conditioners).perform()
 time.sleep(2)
 
 # Locate and click the "Portable Air Conditioners" link
-portable_air_conditioners = driver.find_element("xpath", "//a[text()='Portable Air Conditioners']")
+portable_air_conditioners = driver.find_element("xpath", "//span[text()='Portable Air Conditioners']")
 portable_air_conditioners.click()
 
 # Add a short delay to observe the result
@@ -692,8 +702,9 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-"""
+XXXXXXXXXXXXXX """ 
 
+""" 
 QUESTION 12
 -----------
 URL : https://www.homedepot.com/ 
@@ -710,7 +721,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Initialize the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the specified URL
 url = "https://www.homedepot.com/"
@@ -760,9 +771,9 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-xxxxxxxxxxxxxxxxx"""
-
+xxxxxxxxxxxxxxxxxx"""
 """
+
 QUESTION 13
 -----------
 URL :  https://www.snapdeal.com/
@@ -777,7 +788,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Initialize the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the specified URL
 url = "https://www.snapdeal.com/"
@@ -790,7 +801,7 @@ driver.maximize_window()
 time.sleep(5)
 
 # Locate the "Mobile & Tablets" menu
-mobile_and_tablets_menu = driver.find_element("xpath", "//span[text()='Mobile & Tablets']")
+mobile_and_tablets_menu = driver.find_element("xpath", "//span[text()='Mobile & Accessories']")
 
 # Perform mouseover on the "Mobile & Tablets" menu
 action = ActionChains(driver)
@@ -800,7 +811,7 @@ action.move_to_element(mobile_and_tablets_menu).perform()
 time.sleep(2)
 
 # Locate the "Newly Launch Covers" link
-newly_launch_covers = driver.find_element("xpath", "//span[text()='Newly Launch Covers']")
+newly_launch_covers = driver.find_element("xpath", "//span[text()='Printed Back Covers']")
 
 # Click on the "Newly Launch Covers" link
 newly_launch_covers.click()
@@ -811,7 +822,7 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-xxxxxxxxxxxxxxxxxxxx"""
+"""
 
 """
 
@@ -823,13 +834,13 @@ NOTE: Women's Fashion is first mouseover
       Click footwear->click heals.
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Initialize the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the specified URL
 url = "https://www.snapdeal.com/"
@@ -841,8 +852,8 @@ driver.maximize_window()
 # Add a short delay to allow the page to load completely
 time.sleep(5)
 
-# Locate the "Women's Fashion" menu
-womens_fashion_menu = driver.find_element("xpath", "//span[text()='Women's Fashion']")
+# Locate the "Women's Fashion" menu                 
+womens_fashion_menu = driver.find_element("xpath", "//span[text()='Home & Kitchen']")
 
 # Perform mouseover on the "Women's Fashion" menu
 action = ActionChains(driver)
@@ -861,7 +872,7 @@ footwear_link.click()
 time.sleep(3)
 
 # Locate and click the "Heels" category
-heels_category = driver.find_element("xpath", "//span[text()='Heels']")
+heels_category = driver.find_element("xpath", "//div[text()='Heels for Women']")
 
 # Click on the "Heels" link
 heels_category.click()
@@ -872,7 +883,6 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-xxxxxxxxxxxxxxxxxxxxx"""
 
 """
 
