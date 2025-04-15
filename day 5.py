@@ -853,7 +853,7 @@ driver.maximize_window()
 time.sleep(5)
 
 # Locate the "Women's Fashion" menu                 
-womens_fashion_menu = driver.find_element("xpath", "//span[text()='Home & Kitchen']")
+womens_fashion_menu = driver.find_element("xpath", "//span[text()='Women's Fashion']")
 
 # Perform mouseover on the "Women's Fashion" menu
 action = ActionChains(driver)
@@ -863,22 +863,13 @@ action.move_to_element(womens_fashion_menu).perform()
 time.sleep(2)
 
 # Locate and click the "Footwear" link
-footwear_link = driver.find_element("xpath", "//span[text()='Footwear']")
+footwear_link = driver.find_element("xpath", "//span[text()='Heels']")
 
 # Click on the "Footwear" link
 footwear_link.click()
 
 # Add a short delay to ensure the page loads
 time.sleep(3)
-
-# Locate and click the "Heels" category
-heels_category = driver.find_element("xpath", "//div[text()='Heels for Women']")
-
-# Click on the "Heels" link
-heels_category.click()
-
-# Add a short delay to observe the result
-time.sleep(5)
 
 # Close the browser
 driver.quit()
