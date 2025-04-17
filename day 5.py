@@ -834,7 +834,7 @@ NOTE: Women's Fashion is first mouseover
       Click footwear->click heals.
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
@@ -853,7 +853,7 @@ driver.maximize_window()
 time.sleep(5)
 
 # Locate the "Women's Fashion" menu                 
-womens_fashion_menu = driver.find_element("xpath", "//span[text()='Women's Fashion']")
+womens_fashion_menu = driver.find_element("xpath", '//span[text()="Women\'s Fashion"]')
 
 # Perform mouseover on the "Women's Fashion" menu
 action = ActionChains(driver)
@@ -874,7 +874,7 @@ time.sleep(3)
 # Close the browser
 driver.quit()
 
-
+"""
 """
 
 QUESTION 15
