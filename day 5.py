@@ -893,7 +893,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 # Initialize the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the specified URL
 url = "https://www.amazon.in/"
@@ -906,7 +906,7 @@ driver.maximize_window()
 time.sleep(5)
 
 # Locate the "Sign In" menu
-sign_in_menu = driver.find_element("xpath", "//span[@class='nav-line-2' and text()='Hello, Sign in']")
+sign_in_menu = driver.find_element("xpath", "//a[@data-nav-ref='nav_ya_signin']")
 
 # Perform mouseover on the "Sign In" menu
 action = ActionChains(driver)
@@ -924,25 +924,14 @@ register_link.click()
 # Add a short delay to ensure the Register page loads
 time.sleep(3)
 
-# Enter details in the registration form
-# Locate the name input field and enter a name
-name_input = driver.find_element("xpath", "//input[@name='customerName']")
-name_input.send_keys("John Doe")
-
 # Locate the email input field and enter an email
 email_input = driver.find_element("xpath", "//input[@name='email']")
-email_input.send_keys("johndoe@example.com")
+email_input.send_keys("8056769187")
 
-# Locate the password input field and enter a password
-password_input = driver.find_element("xpath", "//input[@name='password']")
-password_input.send_keys("StrongPassword123")
 
 # Locate the password check field and re-enter the password
-password_check_input = driver.find_element("xpath", "//input[@name='passwordCheck']")
-password_check_input.send_keys("StrongPassword123")
-
-# Submit the registration form
-password_check_input.send_keys(Keys.RETURN)
+continue_ = driver.find_element("xpath", "//span[@id='continue']")
+continue_.click()
 
 # Add a short delay to observe the result
 time.sleep(5)
