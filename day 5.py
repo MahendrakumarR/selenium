@@ -886,7 +886,7 @@ NOTE: Signin is first mouseover
       Give details for Register
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
@@ -938,7 +938,7 @@ time.sleep(5)
 
 # Close the browser
 driver.quit()
-
+"""
 
 """
 QUESTON 16
@@ -949,7 +949,7 @@ NOTE: signin is a first mouseover
       Click SD Cash
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
@@ -968,7 +968,7 @@ driver.maximize_window()
 time.sleep(5)
 
 # Locate the "Sign In" menu
-sign_in_menu = driver.find_element("xpath", "//span[@class='nav-line-2' and text()='Hello, Sign in']")
+sign_in_menu = driver.find_element("xpath", "//a[@data-nav-ref='nav_ya_signin']")
 
 # Perform mouseover on the "Sign In" menu
 action = ActionChains(driver)
@@ -990,7 +990,7 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-xxxxxxxxxxxxxxxxxxx"""
+
 
 """
 QUESTION 17
