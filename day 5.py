@@ -949,13 +949,13 @@ NOTE: signin is a first mouseover
       Click SD Cash
 
 """
-
+"""
 from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 import time
 
 # Initialize the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the specified URL
 url = "https://www.amazon.in/"
@@ -965,32 +965,18 @@ driver.get(url)
 driver.maximize_window()
 
 # Add a short delay to allow the page to load completely
-time.sleep(5)
-
-# Locate the "Sign In" menu
-sign_in_menu = driver.find_element("xpath", "//a[@data-nav-ref='nav_ya_signin']")
-
-# Perform mouseover on the "Sign In" menu
-action = ActionChains(driver)
-action.move_to_element(sign_in_menu).perform()
-
-# Add a short delay to ensure the submenu loads
 time.sleep(2)
 
-# Locate and click the "SD Cash" link
-# (Please check the specific XPath for SD Cash, which may vary depending on how it is displayed in the menu or on the page)
-sd_cash_link = driver.find_element("xpath", "//span[text()='SD Cash']")
+# Locate the "Sign In" menu
+sign_in_menu = driver.find_element("xpath",'//input[@id="twotabsearchtextbox"]')
+sign_in_menu.send_keys("sd cash")
+sign_in_menu.send_keys(Keys.ENTER)
 
-# Click on the "SD Cash" link
-sd_cash_link.click()
+time.sleep(15)
 
-# Add a short delay to observe the result
-time.sleep(5)
-
-# Close the browser
 driver.quit()
 
-
+"""
 
 """
 QUESTION 17
@@ -1001,7 +987,7 @@ NOTE: womens is mouseover
       Click flat slipper
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
@@ -1049,7 +1035,7 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-xxxxxxxxxxxxxxxxxxxxxxx"""
+
 
 """
 QUESTION 18
