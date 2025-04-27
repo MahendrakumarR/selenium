@@ -1048,7 +1048,7 @@ NOTE: Baby&Kids is mouseover
       Click Remote Control Toys
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
@@ -1100,7 +1100,7 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-
+"""
 
 """
 QUESTION 19
@@ -1112,13 +1112,13 @@ NOTE: Electronics is mouseover
       Click 1st Product name
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Initialize the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the specified URL
 url = "https://www.flipkart.com/"
@@ -1167,7 +1167,7 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-xxxxxxxxxxxxxxxxxxxxxx"""
+
 
 """
 QUESTION 20
