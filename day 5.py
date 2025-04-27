@@ -987,13 +987,13 @@ NOTE: womens is mouseover
       Click flat slipper
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Initialize the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the specified URL
 url = "https://www.flipkart.com/"
@@ -1013,28 +1013,30 @@ try:
 except:
     pass
 
-# Locate the "Womens" menu
-womens_menu = driver.find_element("xpath", "//div[text()='Women']")
+# Locate the "fashion" menu
+fashion = driver.find_element("xpath", "//span[text()='Fashion']")
 
 # Perform mouseover on the "Womens" menu
 action = ActionChains(driver)
-action.move_to_element(womens_menu).perform()
+action.move_to_element(fashion).perform()
 
 # Add a short delay to ensure the submenu loads
 time.sleep(2)
 
-# Locate and click the "Flat Slippers" category
-flat_slippers_link = driver.find_element("xpath", "//a[text()='Flat Slippers']")
+# Locate and click the "womens foot wear" category
+foot_wear = driver.find_element("xpath", "//a[text()='Women Footwear']")
+action = ActionChains(driver)
+action.move_to_element(foot_wear).perform()
 
-# Click on the "Flat Slippers" link
-flat_slippers_link.click()
+flat = driver.find_element("xpath", "//a[text()='Women Flats']")
+flat.click()
 
-# Add a short delay to observe the result
+# Add a short delay to observe the result   
 time.sleep(5)
 
 # Close the browser
 driver.quit()
-
+"""
 
 
 """
@@ -1046,13 +1048,13 @@ NOTE: Baby&Kids is mouseover
       Click Remote Control Toys
 
 """
-""""
+
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Initialize the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the specified URL
 url = "https://www.flipkart.com/"
@@ -1073,7 +1075,7 @@ except:
     pass
 
 # Locate the "Baby & Kids" menu
-baby_and_kids_menu = driver.find_element("xpath", "//div[text()='Baby & Kids']")
+baby_and_kids_menu = driver.find_element("xpath", "//span[text()='Beauty, Toys & More']")
 
 # Perform mouseover on the "Baby & Kids" menu
 action = ActionChains(driver)
@@ -1082,8 +1084,12 @@ action.move_to_element(baby_and_kids_menu).perform()
 # Add a short delay to ensure the submenu loads
 time.sleep(2)
 
+toys = driver.find_element("xpath", "//a[text()='Toys & School Supplies']")
+action = ActionChains(driver)
+action.move_to_element(toys).perform()
+
 # Locate and click the "Remote Control Toys" category
-remote_control_toys_link = driver.find_element("xpath", "//a[text()='Remote Control Toys']")
+remote_control_toys_link = driver.find_element("xpath", "(//a[@class='_3490ry'])[1]")
 
 # Click on the "Remote Control Toys" link
 remote_control_toys_link.click()
@@ -1094,7 +1100,7 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-xxxxxxxxxxxxxxxx """
+
 
 """
 QUESTION 19
