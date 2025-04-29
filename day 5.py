@@ -1112,7 +1112,7 @@ NOTE: Electronics is mouseover
       Click 1st Product name
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
@@ -1139,7 +1139,7 @@ except:
     pass
 
 # Locate the "Electronics" menu
-electronics_menu = driver.find_element("xpath", "//div[text()='Electronics']")
+electronics_menu = driver.find_element("xpath", "//span[text()='Electronics']")
 
 # Perform mouseover on the "Electronics" menu
 action = ActionChains(driver)
@@ -1149,14 +1149,15 @@ action.move_to_element(electronics_menu).perform()
 time.sleep(2)
 
 # Locate and click the "Realme" link
-realme_link = driver.find_element("xpath", "//a[text()='Realme']")
-realme_link.click()
+mobile = driver.find_element("xpath", "//a[text()='MobileAccessory']")
+action = ActionChains(driver)
+action.move_to_element(mobile).perform()
 
 # Add a short delay to ensure the page loads with products
 time.sleep(3)
 
 # Locate and click the first product name on the page
-first_product = driver.find_element("xpath", "(//a[@class='_1fQZEK'])[1]")
+first_product = driver.find_element("xpath", "(//a[text()='Screen Guards'])[2]")
 
 # Click on the first product
 first_product.click()
@@ -1167,8 +1168,7 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-
-
+"""
 """
 QUESTION 20
 -----------
@@ -1179,13 +1179,14 @@ NOTE: Tvs & Appliances  is mouseover
       Click 1st Product name
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 import time
 
 # Initialize the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # Open the specified URL
 url = "https://www.flipkart.com/"
@@ -1206,24 +1207,23 @@ except:
     pass
 
 # Locate the "TVs & Appliances" menu
-tvs_and_appliances_menu = driver.find_element("xpath", "//div[text()='TVs & Appliances']")
+tvs_and_appliances_menu = driver.find_element("xpath", "//span[text()='Appliances']")
 
-# Perform mouseover on the "TVs & Appliances" menu
-action = ActionChains(driver)
-action.move_to_element(tvs_and_appliances_menu).perform()
+tvs_and_appliances_menu.click()
 
 # Add a short delay to ensure the submenu loads
 time.sleep(2)
 
-# Locate and click the "Mi" link
-mi_link = driver.find_element("xpath", "//a[text()='Mi']")
-mi_link.click()
+
+mi_link = driver.find_element("xpath", "//input[@class='zDPmFV']")
+mi_link.send_keys("mi")
+mi_link.send_keys(Keys.ENTER)
 
 # Add a short delay to ensure the page loads with products
 time.sleep(3)
 
 # Locate and click the first product name on the page
-first_product = driver.find_element("xpath", "(//a[@class='_1fQZEK'])[1]")
+first_product = driver.find_element("xpath", "//a[text()='Mi Digital Watch  - For Boys']")
 
 # Click on the first product
 first_product.click()
@@ -1234,4 +1234,3 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-xxxxxxxxxxxxxxxx"""
