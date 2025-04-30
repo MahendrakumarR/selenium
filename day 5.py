@@ -715,7 +715,7 @@ NOTE: All department is first mouseover
       Click celling paint.
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
@@ -732,37 +732,43 @@ driver.maximize_window()
 
 # Add a short delay to allow the page to load completely
 time.sleep(5)
-
+try:
+    close_popup = driver.find_element("xpath", "//button[contains(text(), '✕')]")
+    close_popup.click()
+    time.sleep(2)
+except:
+    pass
 # Locate the "All Departments" menu
-all_departments = driver.find_element("xpath", "//a[@data-id='departmentsFlyout']")
+all_departments = driver.find_element("xpath", "//a[text()='Shop All']")
 
-# Perform mouseover on "All Departments"
-action = ActionChains(driver)
-action.move_to_element(all_departments).perform()
+all_departments.click()
 
 # Add a short delay to ensure the submenu loads
 time.sleep(2)
 
-# Locate the "Paint" submenu
-paint_menu = driver.find_element("xpath", "//a[text()='Paint']")
 
-# Perform mouseover on "Paint"
-action.move_to_element(paint_menu).perform()
+menu = driver.find_element("xpath", "//span[text()='Shop By Department']")
 
-# Add a short delay to ensure the next submenu loads
-time.sleep(2)
-
-# Locate the "Interior Painting" submenu
-interior_painting = driver.find_element("xpath", "//a[text()='Interior Painting']")
-
-# Perform mouseover on "Interior Painting"
-action.move_to_element(interior_painting).perform()
+menu.click()
 
 # Add a short delay to ensure the next submenu loads
 time.sleep(2)
 
-# Locate and click the "Ceiling Paint" link
-ceiling_paint = driver.find_element("xpath", "//a[text()='Ceiling Paint']")
+
+paint = driver.find_element("xpath", "//span[text()='Paint']")
+
+paint.click()
+
+# Add a short delay to ensure the next submenu loads
+time.sleep(2)
+
+interior_paint = driver.find_element("xpath", "//span[text()='Interior Paint']")
+interior_paint.click()
+
+# Add a short delay to observe the result
+time.sleep(2)
+
+ceiling_paint = driver.find_element("xpath", "//span[text()='Ceiling Paint']")
 ceiling_paint.click()
 
 # Add a short delay to observe the result
@@ -771,7 +777,7 @@ time.sleep(5)
 # Close the browser
 driver.quit()
 
-xxxxxxxxxxxxxxxxxx"""
+
 """
 
 QUESTION 13
@@ -1179,7 +1185,7 @@ NOTE: Tvs & Appliances  is mouseover
       Click 1st Product name
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
@@ -1223,7 +1229,7 @@ mi_link.send_keys(Keys.ENTER)
 time.sleep(3)
 
 # Locate and click the first product name on the page
-first_product = driver.find_element("xpath", "//a[text()='Mi Digital Watch  - For Boys']")
+first_product = driver.find_element("xpath", "(//a[@class='wjcEIp'])[1]")
 
 # Click on the first product
 first_product.click()
@@ -1233,4 +1239,4 @@ time.sleep(5)
 
 # Close the browser
 driver.quit()
-
+"""
