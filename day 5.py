@@ -718,6 +718,7 @@ NOTE: All department is first mouseover
 
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
 import time
 
 # Initialize the WebDriver
@@ -733,42 +734,57 @@ driver.maximize_window()
 # Add a short delay to allow the page to load completely
 time.sleep(5)
 try:
-    close_popup = driver.find_element("xpath", "//button[contains(text(), '✕')]")
+    close_popup = driver.find_element(By.XPATH, "//button[contains(text(), '✕')]")
     close_popup.click()
     time.sleep(2)
 except:
     pass
-# Locate the "All Departments" menu
-all_departments = driver.find_element("xpath", "//a[text()='Shop All']")
 
-all_departments.click()
+time.sleep(3)
+
+#all_departments = driver.find_element(By.XPATH, "//a[text()='Shop All']")
+
+#all_departments.click()
 
 # Add a short delay to ensure the submenu loads
 time.sleep(2)
 
 
-menu = driver.find_element("xpath", "//span[text()='Shop By Department']")
+try:
+    menu = driver.find_element(By.XPATH, "//p[contains(text(), 'Shop All')]")
+    menu.click()
+    time.sleep(3)
+except:
+    print("All Departments button not found.")
 
-menu.click()
+
+try:
+    shop = driver.find_element(By.XPATH, "//span[contains(text(), 'Shop By Department')]")
+    ActionChains(driver).move_to_element(shop).click().perform()
+    time.sleep(3)
+except:
+    print("shop by department link not found.")
+
+
+# Hover and click on "Paint"
+try:
+    paint = driver.find_element(By.XPATH, "//span[contains(text(), 'Paint')]")
+    paint.click()
+    time.sleep(3)
+except:
+    print("Paint link not found.")
+
 
 # Add a short delay to ensure the next submenu loads
 time.sleep(2)
 
-
-paint = driver.find_element("xpath", "//span[text()='Paint']")
-
-paint.click()
-
-# Add a short delay to ensure the next submenu loads
-time.sleep(2)
-
-interior_paint = driver.find_element("xpath", "//span[text()='Interior Paint']")
+interior_paint = driver.find_element(By.XPATH, "//span[contains(text()='Interior Paint'])")
 interior_paint.click()
 
 # Add a short delay to observe the result
 time.sleep(2)
 
-ceiling_paint = driver.find_element("xpath", "//span[text()='Ceiling Paint']")
+ceiling_paint = driver.find_element(By.XPATH, "//span[contains(text()='Ceiling Paint')]")
 ceiling_paint.click()
 
 # Add a short delay to observe the result
