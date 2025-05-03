@@ -765,7 +765,7 @@ try:
 except:
     print("shop by department link not found.")
 
-
+ 
 # Hover and click on "Paint"
 try:
     paint = driver.find_element(By.XPATH, "//span[contains(text(), 'Paint')]")
