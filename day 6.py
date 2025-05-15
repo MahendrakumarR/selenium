@@ -1,5 +1,5 @@
 """
-DAY6
+DAY 6
 ----
 Robot class
 contextClick
@@ -69,6 +69,7 @@ NOTE: Type email in email textbox and cut  the email using Robot class
       Paste that email in password text  using Robot class 
 
 """
+
 """
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -76,7 +77,7 @@ import time
 import pyautogui
 
 # Set up WebDriver
-driver = webdriver.Chrome()  # Ensure ChromeDriver is in your PATH
+driver = webdriver.Firefox()  # Ensure ChromeDriver is in your PATH
 driver.maximize_window()
 
 # Navigate to Facebook
@@ -113,6 +114,7 @@ time.sleep(2)
 # Close the browser
 driver.quit()
 
+
 """
 
 """
@@ -132,7 +134,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 # Set up the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 try:
     # Open Google homepage
@@ -178,7 +180,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 # Set up the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 try:
     # Open the URL
@@ -186,7 +188,7 @@ try:
     driver.maximize_window()
 
     # Locate and click "Interview Question"
-    interview_question = driver.find_element(By.LINK_TEXT, "Interview Question")
+    interview_question = driver.find_element(By.XPATH, "Interview Question")
     interview_question.click()
     time.sleep(2)
 
@@ -199,14 +201,14 @@ try:
 
     # Open link in a new window using keyboard shortcut
     actions.send_keys(Keys.CONTROL + Keys.RETURN).perform()
-
+ 
     # Wait to see the action in the new window
     time.sleep(5)
 
 finally:
     # Close the browser
     driver.quit()
-xxxxxxxxxxxxxxxxxxxxxxxxxxx"""
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx """
 
 """
 QUESTION 4
@@ -216,14 +218,14 @@ URL : http://greenstech.in/selenium-course-content.html
 NOTE: Right Click Framework Test Papers  and Select Inspect
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Set up the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 try:
     # Open the URL
@@ -243,7 +245,7 @@ try:
 finally:
     # Close the browser
     driver.quit()
-xxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
 
 """
 QUESTION 5
