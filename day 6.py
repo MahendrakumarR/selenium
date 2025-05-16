@@ -231,7 +231,7 @@ try:
     # Open the URL
     driver.get("http://greenstech.in/selenium-course-content.html")
     driver.maximize_window()
-
+ 
     # Locate the "Framework Test Papers" link
     framework_test_papers = driver.find_element(By.LINK_TEXT, "Framework Test Papersnb")
 
