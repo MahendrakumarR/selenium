@@ -223,7 +223,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 import time
-
+ 
 # Set up the WebDriver
 driver = webdriver.Firefox()
 
@@ -233,7 +233,7 @@ try:
     driver.maximize_window()
 
     # Locate the "Framework Test Papers" link
-    framework_test_papers = driver.find_element(By.LINK_TEXT, "Framework Test Papers")
+    framework_test_papers = driver.find_element(By.LINK_TEXT, "Framework Test Papersnb")
 
     # Right-click on the "Framework Test Papers" link
     actions = ActionChains(driver)
