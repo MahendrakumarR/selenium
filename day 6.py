@@ -218,7 +218,7 @@ URL : http://greenstech.in/selenium-course-content.html
 NOTE: Right Click Framework Test Papers  and Select Inspect
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -233,11 +233,16 @@ try:
     driver.maximize_window()
  
     # Locate the "Framework Test Papers" link
-    framework_test_papers = driver.find_element(By.LINK_TEXT, "Framework Test Papersnb")
+    framework_test_papers = driver.find_element(By.ID, "heading304")
 
+    # Scroll the element into view
+    driver.execute_script("arguments[0].scrollIntoView(true);", framework_test_papers)
+    
     # Right-click on the "Framework Test Papers" link
     actions = ActionChains(driver)
     actions.context_click(framework_test_papers).perform()
+
+    
 
     # Wait for some time to observe the action
     time.sleep(5)
@@ -245,7 +250,7 @@ try:
 finally:
     # Close the browser
     driver.quit()
-
+"""
 
 """
 QUESTION 5
@@ -255,39 +260,46 @@ URL : http://greenstech.in/selenium-course-content.html
 NOTE: Click Model Resume and  rightClick resume model 4 the page and click save as.
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Set up the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 try:
     # Open the URL
-    driver.get("http://greenstech.in/selenium-course-content.html")
+    driver.get("http://greenstech.in/selenium-course-content.html")  
     driver.maximize_window()
 
     # Locate and click on "Model Resume"
-    model_resume_link = driver.find_element(By.LINK_TEXT, "Model Resume")
+    model_resume_link = driver.find_element(By.ID, "heading201")
     model_resume_link.click()
-    time.sleep(2)  # Wait for the page to load if required
+    time.sleep(2)  # Wait for the page to load
 
     # Locate the "Resume Model 4" link
-    resume_model_4_link = driver.find_element(By.LINK_TEXT, "Resume Model 4")
+    resume_model_4_link = driver.find_element(By.XPATH, "//a[contains(text(), 'Resume Model-4')]")
 
-    # Right-click on "Resume Model 4" (this doesn't open "Save As", just simulates the right-click)
+    # Scroll the element into view
+    driver.execute_script("arguments[0].scrollIntoView(true);", resume_model_4_link)
+
+    # Right-click on "Resume Model 4"
     actions = ActionChains(driver)
     actions.context_click(resume_model_4_link).perform()
+
+    # Optional: Print the link for download
+    file_url = resume_model_4_link.get_attribute("href")
+    print("Download link:", file_url)
 
     # Wait to observe the right-click action
     time.sleep(5)
 
 finally:
-    # Close the browser
     driver.quit()
-xxxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+
 
 """
 QUESTION 6
