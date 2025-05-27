@@ -258,6 +258,54 @@ QUESTION 5
 URL : http://greenstech.in/selenium-course-content.html
 
 NOTE: Click Model Resume and  rightClick resume model 4 the page and click save as.
+"""
+"""
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+import os
+import requests
+
+# Set up the driver
+driver = webdriver.Firefox()  # or use Edge/Firefox based on your setup
+driver.get("http://greenstech.in/selenium-course-content.html")
+driver.maximize_window()
+
+time.sleep(3)  # Allow page to load
+
+# Click the "Model Resume" link to open the modal
+model_resume_button = driver.find_element(By.XPATH, "//h2[contains(text(),'Model Resume')]")
+model_resume_button.click()
+time.sleep(2)
+
+# Locate "Resume Model 4"
+resume_model_4 = driver.find_element(By.XPATH, "//a[contains(text(),'Resume Model-4')]")
+
+# Get the href attribute of the link (the file URL)
+file_url = resume_model_4.get_attribute("href")
+print("Resume 4 download link:", file_url)
+
+# Download the file directly using requests
+response = requests.get(file_url)
+filename = file_url.split("/")[-1]
+
+with open(filename, "wb") as file:
+    file.write(response.content)
+
+print(f"Downloaded '{filename}' successfully.")
+
+# Clean up
+driver.quit()
+
+"""
+
+"""
+QUESTION 6
+-----------
+URL : http://greenstech.in/selenium-course-content.html
+
+NOTE: Right Click RPA [ below Top Selenium Trends In 2020] and click Inspect
 
 """
 
@@ -268,55 +316,6 @@ import time
 
 # Set up the WebDriver
 driver = webdriver.Firefox()
-
-try:
-    # Open the URL
-    driver.get("http://greenstech.in/selenium-course-content.html")  
-    driver.maximize_window()
-
-    # Locate and click on "Model Resume"
-    model_resume_link = driver.find_element(By.ID, "heading201")
-    model_resume_link.click()
-    time.sleep(2)  # Wait for the page to load
-
-    # Locate the "Resume Model 4" link
-    resume_model_4_link = driver.find_element(By.XPATH, "//a[contains(text(), 'Resume Model-4')]")
-
-    # Scroll the element into view
-    driver.execute_script("arguments[0].scrollIntoView(true);", resume_model_4_link)
-
-    # Right-click on "Resume Model 4"
-    actions = ActionChains(driver)
-    actions.context_click(resume_model_4_link).perform()
-
-    # Optional: Print the link for download
-    file_url = resume_model_4_link.get_attribute("href")
-    print("Download link:", file_url)
-
-    # Wait to observe the right-click action
-    time.sleep(5)
-
-finally:
-    driver.quit()
-
-
-
-"""
-QUESTION 6
------------
-URL : http://greenstech.in/selenium-course-content.html
-
-NOTE: Right Click RPA [ below Top Selenium Trends In 2020] and click Inspect
-
-"""
-"""
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
-import time
-
-# Set up the WebDriver
-driver = webdriver.Chrome()
 
 try:
     # Open the URL
@@ -336,7 +335,7 @@ try:
 finally:
     # Close the browser
     driver.quit()
-xxxxxxxxxxxxxxxxxxxxxxx"""
+
 
 """
 QUESTION 7
