@@ -331,7 +331,7 @@ try:
 
     # Wait for some time to observe the right-click action
     time.sleep(5)
-
+  
 finally:
     # Close the browser
     driver.quit()
