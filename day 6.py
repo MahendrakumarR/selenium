@@ -308,7 +308,7 @@ URL : http://greenstech.in/selenium-course-content.html
 NOTE: Right Click RPA [ below Top Selenium Trends In 2020] and click Inspect
 
 """
-
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -339,7 +339,7 @@ finally:
     # Close the browser
     driver.quit()
 
-
+"""
 """
 QUESTION 7
 ----------
@@ -348,14 +348,14 @@ URL : http://greenstech.in/selenium-course-content.html
 NOTE: Click Selenium Test Papaers Right Click Day 6 Robot and select Inspect
 
 """
-"""
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Set up the WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 try:
     # Open the URL
@@ -380,7 +380,7 @@ try:
 finally:
     # Close the browser
     driver.quit()
-xxxxxxxxxxxxxxxxxxxxxxx"""
+
 
 """
 
