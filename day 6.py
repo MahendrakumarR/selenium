@@ -323,7 +323,10 @@ try:
     driver.maximize_window()
 
     # Locate the "RPA" link below "Top Selenium Trends In 2020"
-    rpa_link = driver.find_element(By.XPATH, "//h2[text()='Top Selenium Trends In 2020']/following::a[text()='RPA']")
+    rpa_link = driver.find_element(By.XPATH, "//a[text()='RPA']")
+
+    # Scroll the element into view
+    driver.execute_script("arguments[0].scrollIntoView(true);", rpa_link)
 
     # Right-click (context-click) on the "RPA" link
     actions = ActionChains(driver)
